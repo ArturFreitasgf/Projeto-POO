@@ -7,7 +7,7 @@ public class Consulta {
     private String data;
     private String descricao;
 
-    // Construtor
+    
     public Consulta(int id, String paciente, String medico, String data, String descricao) {
         this.id = id;
         this.paciente = paciente;
@@ -16,7 +16,6 @@ public class Consulta {
         this.descricao = descricao;
     }
 
-    // Getters e Setters
     public int getId() {
         return id;
     }
