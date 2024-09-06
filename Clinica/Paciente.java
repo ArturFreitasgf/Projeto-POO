@@ -1,3 +1,4 @@
+package Clinica;
 public class Paciente {
     private String nome;
     private int idade;

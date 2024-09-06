@@ -1,3 +1,4 @@
+package Clinica;
 public class Medico {
     private String nome;
     private String especialidade;
