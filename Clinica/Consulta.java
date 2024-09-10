@@ -6,7 +6,6 @@ public class Consulta {
     private String medico;
     private String data;
     private String Motivo;
-
     
     public Consulta(int id, String paciente, String medico, String data, String descricao) {
         this.id = id;
