@@ -29,17 +29,16 @@ public class SistemaEvento{
         int mesevento = scan.nextInt();
         System.out.print("Ano do Evento: ");
         int anoevento = scan.nextInt();
-        scan.nextLine(); // Limpar o buffer
+        scan.nextLine(); 
 
         Evento evento = new Evento(nomeevento, diaevento, mesevento, anoevento, capacidade, local);
 
-        // Registro de Participantes
         System.out.println("\n----------Registro de Participantes----------");
         String continuar;
         do {
-            if (evento.estaLotado()) {  // Verifica se o evento está lotado
-                System.out.println("Limite de participantes atingido.");  // Exibe a mensagem de limite atingido
-                break;  // Sai do loop
+            if (evento.estaLotado()){  
+                System.out.println("Limite de participantes atingido.");  
+                break;  
             }
 
             // Coleta informações do participante
@@ -48,14 +47,13 @@ public class SistemaEvento{
             System.out.print("Email do Participante: ");
             String emailParticipante = scan.nextLine();
             System.out.print("Número de Celular do Participante: ");
-            String numeroCelularParticipante = scan.nextLine(); // Coletar número de celular
+            String numeroCelularParticipante = scan.nextLine(); 
 
             Participante participante = new Participante(nomeParticipante, emailParticipante, numeroCelularParticipante);
             if (evento.adicionarParticipante(participante)) {
                 System.out.println("Participante registrado com sucesso.");
             }
 
-            // Pergunta se deseja continuar adicionando participantes
             System.out.print("Deseja adicionar outro participante? (sim/nao): ");
             continuar = scan.nextLine();
         } while (continuar.equalsIgnoreCase("sim"));
