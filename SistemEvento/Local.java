@@ -1,4 +1,4 @@
-package SistemaEvento;
+package SistemEvento;
 public class Local {
     private String endereco;
     private String cidade;

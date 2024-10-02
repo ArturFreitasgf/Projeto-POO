@@ -1,4 +1,4 @@
-package SistemaEvento;
+package SistemEvento;
 public class Evento {
     private String nomeevento;
     private int diaevento;

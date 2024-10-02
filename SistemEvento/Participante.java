@@ -1,4 +1,4 @@
-package SistemaEvento;
+package SistemEvento;
 public class Participante{
     private String nome;
     private String email;

@@ -1,4 +1,4 @@
-package SistemaEvento;
+package SistemEvento;
 import java.util.Scanner;
 
 public class SistemaEvento{
