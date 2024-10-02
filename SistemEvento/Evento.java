@@ -20,24 +20,68 @@ public class Evento {
         this.participantes = new Participante[capacidade];
     }
 
-    public String getNomeEvento(){
+    public String getNomeevento() {
         return nomeevento;
     }
 
-    public int getDiaEvento(){
+    public void setNomeevento(String nomeevento) {
+        this.nomeevento = nomeevento;
+    }
+
+    public int getDiaevento() {
         return diaevento;
     }
 
-    public int getMesEvento(){
+    public void setDiaevento(int diaevento) {
+        this.diaevento = diaevento;
+    }
+
+    public int getMesevento() {
         return mesevento;
     }
 
-    public int getAnoEvento(){
+    public void setMesevento(int mesevento) {
+        this.mesevento = mesevento;
+    }
+
+    public int getAnoevento() {
         return anoevento;
     }
 
-    public int getCapacidade(){
+    public void setAnoevento(int anoevento) {
+        this.anoevento = anoevento;
+    }
+
+    public int getCapacidade() {
         return capacidade;
+    }
+
+    public void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    public Local getLocal() {
+        return local;
+    }
+
+    public void setLocal(Local local) {
+        this.local = local;
+    }
+
+    public int getTotalparticipantes() {
+        return totalparticipantes;
+    }
+
+    public void setTotalparticipantes(int totalparticipantes) {
+        this.totalparticipantes = totalparticipantes;
+    }
+
+    public Participante[] getParticipantes() {
+        return participantes;
+    }
+
+    public void setParticipantes(Participante[] participantes) {
+        this.participantes = participantes;
     }
 
     public boolean adicionarParticipante(Participante participante){
@@ -56,10 +100,10 @@ public class Evento {
         System.out.println("Local: " + local.getEndereco());
         System.out.println("Capacidade Máxima: " + capacidade);
         System.out.println("Total de Participantes: " + totalparticipantes);
-        System.out.println("------------Lista de Participantes-------------");
+        System.out.println("\n------------Lista de Participantes-------------");
         for (int i = 0; i < totalparticipantes; i++) {
             Participante p = participantes[i];
-            System.out.println("Nome: " + p.getNome() + ", Email: " + p.getEmail() + ", Celular: " + p.getNumeroCelular());
+            System.out.println("Nome: " + p.getNome() + ", Email: " + p.getEmail() + ", Celular: " + p.getNumerocelular());
         }
     }
 

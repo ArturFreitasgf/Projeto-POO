@@ -10,15 +10,28 @@ public class Local {
         this.tipoLocal = tipoLocal;
     }
 
-    public String getEndereco(){
+    public String getEndereco() {
         return endereco;
     }
 
-    public String getCidade(){
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getCidade() {
         return cidade;
     }
 
-    public String getTipoLocal(){
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getTipoLocal() {
         return tipoLocal;
     }
+
+    public void setTipoLocal(String tipoLocal) {
+        this.tipoLocal = tipoLocal;
+    }
+
 }

@@ -1,12 +1,15 @@
 package SistemEvento;
 import java.util.Scanner;
 
-public class SistemaEvento{
-    public static void main(String[] args){
+public class SistemaEvento {
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        // Exibir cabeçalho
+        exibirCabecalho();
+
         // Cadastro de Local
-        System.out.println("----------Cadastro do Local do Evento----------");
+        System.out.println("\n----------Cadastro do Local do Evento----------");
         System.out.print("Endereço do Local: ");
         String enderecoLocal = scan.nextLine();
         System.out.print("Cidade do Local: ");
@@ -36,7 +39,7 @@ public class SistemaEvento{
         System.out.println("\n----------Registro de Participantes----------");
         String continuar;
         do {
-            if (evento.estaLotado()){  
+            if (evento.estaLotado()) {  
                 System.out.println("Limite de participantes atingido.");  
                 break;  
             }
@@ -63,5 +66,22 @@ public class SistemaEvento{
         evento.gerarRelatorio();
 
         scan.close();
+    }
+
+    private static void exibirCabecalho() {
+        System.out.println(" ______________________________________________");
+        System.out.println("|  ___  ____  ___  ____  ____  __  __    __    |");
+        System.out.println("| / __)(_  _)/ __)(_  _)( ___)(  \\/  )  /__\\   |");
+        System.out.println("| \\__ \\ _)(_ \\__ \\  )(   )__)  )    (  /(__)\\  |");
+        System.out.println("| (___/(____)(___/ (__) (____)(_/\\/\\_)(__)(__) |");
+        System.out.println("|  ____   ____                                 |");
+        System.out.println("| (  _ \\ ( ___)                                |");
+        System.out.println("|  )(_) ) )__)                                 |");
+        System.out.println("| (____/ (____)                                |");
+        System.out.println("|  ____  _  _  ____  _  _  ____  _____  ___    |");
+        System.out.println("| ( ___)( \\/ )( ___)( \\( )(_  _)(  _  )/ __)   |");
+        System.out.println("|  )__)  \\  /  )__)  )  (   )(   )(_)( \\__ \\   |");
+        System.out.println("| (____)  \\/  (____)(_)(_) (__) (_____)(___/   |");
+        System.out.println("|______________________________________________|");
     }
 }

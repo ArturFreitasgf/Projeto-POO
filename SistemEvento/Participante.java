@@ -10,15 +10,28 @@ public class Participante{
         this.numerocelular = numeroCelular;
     }
 
-    public String getNome(){
+    public String getNome() {
         return nome;
     }
 
-    public String getEmail(){
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
         return email;
     }
 
-    public String getNumeroCelular(){
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNumerocelular() {
         return numerocelular;
     }
+
+    public void setNumerocelular(String numerocelular) {
+        this.numerocelular = numerocelular;
+    }
 }
+
