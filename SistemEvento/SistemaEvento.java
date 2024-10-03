@@ -1,6 +1,5 @@
 package SistemEvento;
 import java.util.Scanner;
-
 public class SistemaEvento {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
