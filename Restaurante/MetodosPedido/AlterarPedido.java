@@ -1,9 +1,9 @@
-package Restaurante.MetodosPedido;
+package Projetos.Restaurante.MetodosPedido;
 
 import java.util.List;
 import java.util.Scanner;
 
-import Restaurante.Estruturas.PedidoStruct;
+import Projetos.Restaurante.Estruturas.PedidoStruct;
 
 public class AlterarPedido {
     public static void alterarPedido(List<PedidoStruct> pedidoList, int IDSearch, Scanner scanner){
