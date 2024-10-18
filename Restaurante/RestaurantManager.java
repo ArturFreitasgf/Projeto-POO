@@ -1,6 +1,6 @@
-package Projetos.Restaurante;
+package Restaurante;
 
-import Projetos.Restaurante.Classes.Pedido;
+import Restaurante.Classes.Pedido;
 
 import java.util.Scanner;
 
@@ -9,5 +9,6 @@ public class RestaurantManager {
         Scanner leitor = new Scanner(System.in);
         Pedido start = new Pedido(leitor);
         start.menu();
+        leitor.close();
     }
 }

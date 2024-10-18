@@ -1,7 +1,7 @@
 package Restaurante.Classes;
 
-class Mesa{
-    private boolean isTableBusy; // encapsulamento -> usar gatters e setters
+public class Mesa{
+    private boolean isTableBusy; 
     private int tableNum;
 
     public Mesa(boolean busyTable, int tableNum){

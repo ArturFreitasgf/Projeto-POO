@@ -1,6 +1,6 @@
-package Projetos.Restaurante.MetodosPedido;
+package Restaurante.MetodosPedido;
 
-import Projetos.Restaurante.Estruturas.PedidoStruct;
+import Restaurante.Estruturas.PedidoStruct;
 import java.util.List;
 
 public class GerarRelatorioVendas {
@@ -10,7 +10,7 @@ public class GerarRelatorioVendas {
 
         System.out.println("Relatório de Vendas:");
         for (PedidoStruct pedido : pedidoList) {
-            totalVendas += pedido.getValor() * pedido.getQuantidade();  // Encapsulamento
+            totalVendas += pedido.getProductValue() * pedido.getProductQuantity();  // Encapsulamento
             System.out.println(pedido);
         }
 

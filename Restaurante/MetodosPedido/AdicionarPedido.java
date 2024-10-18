@@ -1,11 +1,18 @@
-package Projetos.Restaurante.MetodosPedido;
+package Restaurante.MetodosPedido;
 
-import Projetos.Restaurante.Estruturas.PedidoStruct;
+import Restaurante.Estruturas.PedidoStruct;
+import Restaurante.Classes.Mesa;
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdicionarPedido {
     private static int idCounter = 0;
+    private List<Mesa> mesas;
+
+    public AdicionarPedido(){
+        this.mesas = new ArrayList<>();
+    }
 
     public static int getId(){
         return idCounter;
@@ -37,7 +44,12 @@ public class AdicionarPedido {
         } while(productValue < 0);
 
         scanner.nextLine();
-        pedidoList.add(new PedidoStruct(productName, productValue, productQuantity, getId()));
+
+        System.out.println("Digite a mesa: ");
+        int mesaID = scanner.nextInt();
+
+        
+        pedidoList.add(new PedidoStruct(productName, productValue, productQuantity, getId(), mesaID));
         setIdCounter();
     }
 }

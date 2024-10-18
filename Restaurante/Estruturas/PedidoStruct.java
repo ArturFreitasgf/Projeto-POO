@@ -5,12 +5,14 @@ public class PedidoStruct {
         private float valor;
         private int quantidade;
         private int Id;
+        private int IdMesa;
     
-        public PedidoStruct(String productName, float productValue, int productQuantity, int IdPedido){
+        public PedidoStruct(String productName, float productValue, int productQuantity, int IdPedido, int IdMesa){
             this.produto = productName;
             this.valor = productValue;
             this.quantidade = productQuantity;
             this.Id = IdPedido;
+            this.IdMesa = IdMesa;
         }
     
         public String getProductName(){
@@ -23,6 +25,10 @@ public class PedidoStruct {
 
         public int getProductId(){
             return Id;
+        }
+
+        public int getProductTableId(){
+            return IdMesa;
         }
 
         public float getProductValue(){

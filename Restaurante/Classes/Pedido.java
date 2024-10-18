@@ -24,13 +24,15 @@ public class Pedido {
                 System.out.println("2) Alterar pedido.");
                 System.out.println("3) Cancelar pedido.");
                 System.out.println("4) Listar pedidos.");
+                System.out.println("5) Fechar pedido.");
+                System.out.println("6) Gerar relatório.");
                 System.out.println("0) Sair.");
                 while(!scanner.hasNextInt()){
                     System.out.println("Escolha a opção entre 1 e 3.");
                     scanner.next();
                 }
                 op = scanner.nextInt();
-            } while(op < 0 || op > 4);
+            } while(op < 0 || op > 6);
     
             scanner.nextLine(); // Limpar Buffer
     
@@ -56,9 +58,13 @@ public class Pedido {
                     AlterarPedido.alterarPedido(pedidoList, id, scanner);
                     break;
                 case 3: // cancelamento de produto.
-                    break;
+                    CancelarPedido.cancelarPedido(pedidoList, scanner);
                 case 4:
                     ListarPedidos.listarPedidos(pedidoList);
+                case 5:
+                    FecharPedido.fecharPedido(pedidoList, scanner);
+                case 6:
+                    GerarRelatorioVendas.gerarRelatorio(pedidoList);
                 case 0:
                     break;
             }
