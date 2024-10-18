@@ -1,48 +1,56 @@
 package Restaurante.Estruturas;
 
+import Restaurante.Classes.Mesa;
+
 public class PedidoStruct {
-        private String produto;
-        private float valor;
-        private int quantidade;
-        private int Id;
-    
-        public PedidoStruct(String productName, float productValue, int productQuantity, int IdPedido){
-            this.produto = productName;
-            this.valor = productValue;
-            this.quantidade = productQuantity;
-            this.Id = IdPedido;
-        }
-    
-        public String getProductName(){
-            return produto;
-        }
+    private String produto;
+    private float valor;
+    private int quantidade;
+    private int Id;
+    private Mesa mesa;
 
-        public int getProductQuantity(){
-            return quantidade;
-        }
+    public PedidoStruct(String productName, float productValue, int productQuantity, int IdPedido, Mesa mesa){
+        this.produto = productName;
+        this.valor = productValue;
+        this.quantidade = productQuantity;
+        this.Id = IdPedido;
+        this.mesa = mesa;
+    }
 
-        public int getProductId(){
-            return Id;
-        }
+    public Mesa getMesa() {
+        return mesa;
+    }
 
-        public float getProductValue(){
-            return valor;
-        }
+    public String getProductName(){
+        return produto;
+    }
 
-        public void setProductName(String name){
-            this.produto = name;
-        }
+    public int getProductQuantity(){
+        return quantidade;
+    }
 
-        public void setProductValue(float value){
-            this.valor = value;
-        }
+    public int getProductId(){
+        return Id;
+    }
 
-        public void setProductQuantity(int quantity){
-            this.quantidade = quantity;
-        }
+    public float getProductValue(){
+        return valor;
+    }
 
-        @Override
-        public String toString(){
-            return String.format("{ID %d} - Pedido de: %s, na quantidade de %d a %.1f cada", Id, produto, quantidade, valor);
+    public void setProductName(String name){
+        this.produto = name;
+    }
+
+    public void setProductValue(float value){
+        this.valor = value;
+    }
+
+    public void setProductQuantity(int quantity){
+        this.quantidade = quantity;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("{ID %d} - Pedido de: %s, na quantidade de %d a %.1f cada", Id, produto, quantidade, valor);
     }
 }

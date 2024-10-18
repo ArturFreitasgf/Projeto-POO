@@ -8,7 +8,8 @@ import java.util.List;
 public class FecharPedido {
 
     public static void fecharPedido(List<PedidoStruct> pedidoList, Mesa mesa) {
-        float total = calcularTotal(pedidoList);
+        // Filtra os pedidos associados à mesa
+        float total = calcularTotal(pedidoList, mesa);
         System.out.println("Total a pagar: R$ " + total);
 
         // Liberar a mesa
@@ -16,10 +17,13 @@ public class FecharPedido {
         System.out.println("Mesa " + mesa.getTableNum() + " foi liberada.");
     }
 
-    private static float calcularTotal(List<PedidoStruct> pedidoList) {
+    private static float calcularTotal(List<PedidoStruct> pedidoList, Mesa mesa) {
         float total = 0;
         for (PedidoStruct pedido : pedidoList) {
-            total += pedido.getProductValue() * pedido.getProductQuantity();  
+            // Somente conta os pedidos que estão associados à mesa especificada
+            if (pedido.getMesa() != null && pedido.getMesa().getTableNum() == mesa.getTableNum()) {
+                total += pedido.getProductValue() * pedido.getProductQuantity();  
+            }
         }
         return total;
     }

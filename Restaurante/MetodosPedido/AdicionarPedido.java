@@ -1,6 +1,7 @@
 package Restaurante.MetodosPedido;
 
 import Restaurante.Estruturas.PedidoStruct;
+import Restaurante.Classes.Mesa; // Importando a classe Mesa
 import java.util.Scanner;
 import java.util.List;
 
@@ -15,7 +16,8 @@ public class AdicionarPedido {
         idCounter++;
     }
 
-    public static void adicionarPedido(List<PedidoStruct> pedidoList, Scanner scanner){
+    public static void adicionarPedido(List<PedidoStruct> pedidoList, Scanner scanner, Mesa mesa){
+        scanner.nextLine();
         System.out.println("Digite o nome do produto: ");
         String productName = scanner.nextLine();
         
@@ -28,7 +30,7 @@ public class AdicionarPedido {
 
         System.out.println("Digite o valor do produto: ");
         float productValue;
-        do{
+        do {
             while(!scanner.hasNextFloat()){
                 System.out.println("Digite um valor válido.");
                 scanner.next();
@@ -36,8 +38,10 @@ public class AdicionarPedido {
             productValue = scanner.nextFloat();
         } while(productValue < 0);
 
-        scanner.nextLine();
-        pedidoList.add(new PedidoStruct(productName, productValue, productQuantity, getId()));
+        scanner.nextLine(); // Limpar o buffer
+
+        // Adiciona o novo pedido à lista, incluindo a referência da mesa
+        pedidoList.add(new PedidoStruct(productName, productValue, productQuantity, getId(), mesa));
         setIdCounter();
     }
 }
