@@ -1,11 +1,15 @@
 package SistemEvento;
 import java.util.Scanner;
+import SistemEvento.Clases.Evento;
+import SistemEvento.Clases.Local;
+import SistemEvento.Clases.Participante;
+import SistemEvento.Cabecalho.Cabeca;
 public class SistemaEvento {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
         // Exibir cabeçalho
-        exibirCabecalho();
+        Cabeca.exibirCabecalho();
 
         // Cadastro de Local
         System.out.println("\n----------Cadastro do Local do Evento----------");
@@ -67,20 +71,4 @@ public class SistemaEvento {
         scan.close();
     }
 
-    private static void exibirCabecalho() {
-        System.out.println(" ______________________________________________");
-        System.out.println("|  ___  ____  ___  ____  ____  __  __    __    |");
-        System.out.println("| / __)(_  _)/ __)(_  _)( ___)(  \\/  )  /__\\   |");
-        System.out.println("| \\__ \\ _)(_ \\__ \\  )(   )__)  )    (  /(__)\\  |");
-        System.out.println("| (___/(____)(___/ (__) (____)(_/\\/\\_)(__)(__) |");
-        System.out.println("|  ____   ____                                 |");
-        System.out.println("| (  _ \\ ( ___)                                |");
-        System.out.println("|  )(_) ) )__)                                 |");
-        System.out.println("| (____/ (____)                                |");
-        System.out.println("|  ____  _  _  ____  _  _  ____  _____  ___    |");
-        System.out.println("| ( ___)( \\/ )( ___)( \\( )(_  _)(  _  )/ __)   |");
-        System.out.println("|  )__)  \\  /  )__)  )  (   )(   )(_)( \\__ \\   |");
-        System.out.println("| (____)  \\/  (____)(_)(_) (__) (_____)(___/   |");
-        System.out.println("|______________________________________________|");
-    }
 }

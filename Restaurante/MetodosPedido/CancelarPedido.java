@@ -1,6 +1,6 @@
-package Projetos.Restaurante.MetodosPedido;
+package Restaurante.MetodosPedido;
 
-import Projetos.Restaurante.Estruturas.PedidoStruct;
+import Restaurante.Estruturas.PedidoStruct;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class CancelarPedido {
 
         PedidoStruct pedidoParaRemover = null;
         for (PedidoStruct pedido : pedidoList) {
-            if (pedido.getId() == id) {  // Encapsulamento
+            if (pedido.getProductId() == id) {  // Encapsulamento
                 pedidoParaRemover = pedido;
                 break;
             }

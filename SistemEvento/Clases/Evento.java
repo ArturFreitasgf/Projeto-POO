@@ -1,4 +1,5 @@
-package SistemEvento;
+package SistemEvento.Clases;
+
 public class Evento {
     private String nomeevento;
     private int diaevento;

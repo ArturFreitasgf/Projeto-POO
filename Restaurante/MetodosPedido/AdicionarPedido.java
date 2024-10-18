@@ -1,6 +1,6 @@
-package Projetos.Restaurante.MetodosPedido;
+package Restaurante.MetodosPedido;
 
-import Projetos.Restaurante.Estruturas.PedidoStruct;
+import Restaurante.Estruturas.PedidoStruct;
 import java.util.Scanner;
 import java.util.List;
 

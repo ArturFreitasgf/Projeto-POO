@@ -1,4 +1,4 @@
-package SistemEvento;
+package SistemEvento.Clases;
 public class Participante{
     private String nome;
     private String email;

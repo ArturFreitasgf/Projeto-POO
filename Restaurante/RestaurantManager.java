@@ -1,6 +1,6 @@
-package Projetos.Restaurante;
+package Restaurante;
 
-import Projetos.Restaurante.Classes.Pedido;
+import Restaurante.Classes.Pedido;
 
 import java.util.Scanner;
 

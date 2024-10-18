@@ -1,4 +1,4 @@
-package SistemEvento;
+package SistemEvento.Clases;
 public class Local {
     private String endereco;
     private String cidade;
