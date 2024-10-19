@@ -1,4 +1,4 @@
-package SistemEvento.Clases;
+package SistemEvento.Classe;
 
 public class Evento {
     private String nomeevento;
@@ -85,7 +85,7 @@ public class Evento {
         this.participantes = participantes;
     }
 
-    public boolean adicionarParticipante(Participante participante){
+    public boolean adicionarParticipante(Participante participante) {
         if (totalparticipantes < capacidade) {
             participantes[totalparticipantes] = participante;
             totalparticipantes++;
@@ -95,20 +95,7 @@ public class Evento {
         }
     }
 
-    public void gerarRelatorio(){
-        System.out.println("Evento: " + nomeevento);
-        System.out.println("Data: " + diaevento + "/" + mesevento + "/" + anoevento);
-        System.out.println("Local: " + local.getEndereco());
-        System.out.println("Capacidade Máxima: " + capacidade);
-        System.out.println("Total de Participantes: " + totalparticipantes);
-        System.out.println("\n------------Lista de Participantes-------------");
-        for (int i = 0; i < totalparticipantes; i++) {
-            Participante p = participantes[i];
-            System.out.println("Nome: " + p.getNome() + ", Email: " + p.getEmail() + ", Celular: " + p.getNumerocelular());
-        }
-    }
-
-    public boolean estaLotado(){
+    public boolean estaLotado() {
         return totalparticipantes >= capacidade;
     }
 }

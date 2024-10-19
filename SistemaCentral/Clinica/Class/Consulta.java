@@ -1,4 +1,4 @@
-package Clinica;
+package Clinica.Class;
 
 public class Consulta {
     private int id;

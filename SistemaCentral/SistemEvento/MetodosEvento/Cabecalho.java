@@ -1,6 +1,6 @@
-package SistemEvento.Cabecalho;
+package SistemEvento.MetodosEvento;
 
-public class Cabeca {
+public class Cabecalho {
     public static void exibirCabecalho() {
         System.out.println(" ______________________________________________");
         System.out.println("|  ___  ____  ___  ____  ____  __  __    __    |");

@@ -1,4 +1,4 @@
-package Clinica;
+package Clinica.Class;
 public class Paciente {
     private String nome;
     private int idade;
