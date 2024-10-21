@@ -1,7 +1,7 @@
 package Restaurante.MetodosPedido;
 
 import Restaurante.Estruturas.PedidoStruct;
-import Restaurante.Classes.Mesa; // Importando a classe Mesa
+import Restaurante.Classes.Mesa;
 import java.util.Scanner;
 import java.util.List;
 

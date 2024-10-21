@@ -1,40 +1,44 @@
 package Clinica;
 
 import java.util.Scanner;
-
-import Clinica.Class.Consulta;
+import Clinica.Class.*;
 
 public class ClinicaManager {
     public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Digite o ID: ");
-        int id = sc.nextInt();
-        sc.nextLine();
-
-        System.out.println("Digite o Nome do Paciente: ");
-        String paciente = sc.nextLine();
-
-        System.out.println("Digite o nome do medico: ");
-        String medico = sc.nextLine();
-
-        System.out.println("Digite a data (DD-MM-AAAA)");
-        String data = sc.nextLine();
-
-        System.out.println("Digite o Motivo: ");
-        String motivo = sc.nextLine();
-
-
-        Consulta consulta = new Consulta(id, paciente, medico, data, motivo);
-
-        System.out.println("ID: " + consulta.getId());
-        System.out.println("Paciente: " + consulta.getPaciente());
-        System.out.println("Médico: " + consulta.getMedico());
-        System.out.println("Data: " + consulta.getData());
-        System.out.println("Motivo: " + consulta.getMotivo());
-
-        sc.close();
+        Scanner leitor = new Scanner(System.in);
+        menu(leitor);
     }
 
+    public static void menu(Scanner leitor) {
+        int opcao = 0;
+        do {
+            System.out.println("1. Agendar Consulta");
+            System.out.println("2. Cancelar Consulta");
+            System.out.println("3. Buscar Consulta");
+            System.out.println("4. Buscar Paciente");
+            System.out.println("5. Sair");
+            opcao = leitor.nextInt();
+            leitor.nextLine(); // Consome o newline
+
+            switch (opcao) {
+                case 1:
+                    GerenciamentoClinica.agendarConsulta(leitor);
+                    break;
+                case 2:
+                    GerenciamentoClinica.cancelarConsulta(leitor);
+                    break;
+                case 3:
+                    GerenciamentoClinica.buscarConsulta(leitor);
+                    break;
+                case 4:
+                    GerenciamentoClinica.buscarPaciente(leitor);
+                    break;
+                case 5:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+            }
+        } while (opcao != 5);
+    }
 }

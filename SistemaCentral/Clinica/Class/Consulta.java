@@ -1,57 +1,25 @@
 package Clinica.Class;
 
+import java.util.Date;
+
 public class Consulta {
-    private int id;
-    private String paciente;
-    private String medico;
-    private String data;
-    private String Motivo;
+    private Paciente paciente;
+    private Medico medico;
+    private Date dataHora;
 
-    public Consulta(int id, String paciente, String medico, String data, String descricao) {
-        this.id = id;
+    public Consulta(Paciente paciente, Medico medico, Date dataHora) {
         this.paciente = paciente;
         this.medico = medico;
-        this.data = data;
-        this.Motivo = descricao;
+        this.dataHora = dataHora;
     }
 
-    public int getId() {
-        return id;
-    }
+    // Getters e setters
+    public Paciente getPaciente() { return paciente; }
+    public void setPaciente(Paciente paciente) { this.paciente = paciente; }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public Medico getMedico() { return medico; }
+    public void setMedico(Medico medico) { this.medico = medico; }
 
-    public String getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(String paciente) {
-        this.paciente = paciente;
-    }
-
-    public String getMedico() {
-        return medico;
-    }
-
-    public void setMedico(String medico) {
-        this.medico = medico;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
-    }
-
-    public String getMotivo() {
-        return Motivo;
-    }
-
-    public void setMotivo(String descricao) {
-        this.Motivo = descricao;
-    }
+    public Date getDataHora() { return dataHora; }
+    public void setDataHora(Date dataHora) { this.dataHora = dataHora; }
 }
