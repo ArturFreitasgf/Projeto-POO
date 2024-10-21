@@ -1,10 +1,11 @@
-package SistemEvento;
-public class Participante{
+package SistemEvento.Classe;
+
+public class Participante {
     private String nome;
     private String email;
     private String numerocelular;
 
-    public Participante(String nome, String email, String numeroCelular){
+    public Participante(String nome, String email, String numeroCelular) {
         this.nome = nome;
         this.email = email;
         this.numerocelular = numeroCelular;
@@ -34,4 +35,3 @@ public class Participante{
         this.numerocelular = numerocelular;
     }
 }
-

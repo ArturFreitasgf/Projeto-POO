@@ -9,6 +9,5 @@ public class RestaurantManager {
         Scanner leitor = new Scanner(System.in);
         Pedido start = new Pedido(leitor);
         start.menu();
-        leitor.close();
     }
 }

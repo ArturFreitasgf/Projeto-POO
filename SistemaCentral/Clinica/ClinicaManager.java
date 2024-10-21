@@ -2,7 +2,9 @@ package Clinica;
 
 import java.util.Scanner;
 
-public class Clinica {
+import Clinica.Class.Consulta;
+
+public class ClinicaManager {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);

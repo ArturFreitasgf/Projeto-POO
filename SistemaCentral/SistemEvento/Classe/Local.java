@@ -1,4 +1,5 @@
-package SistemEvento;
+package SistemEvento.Classe;
+
 public class Local {
     private String endereco;
     private String cidade;
@@ -33,5 +34,4 @@ public class Local {
     public void setTipoLocal(String tipoLocal) {
         this.tipoLocal = tipoLocal;
     }
-
 }
