@@ -1,23 +1,6 @@
-package Restaurante;
+package SistemEvento.UtilEvento;
 
-import Restaurante.Classes.Pedido;
-import Restaurante.Estruturas.Cabeca;
-
-import java.util.Scanner;
-
-public class RestaurantManager {
-    public static void main(String[] args){
-        Scanner leitor = new Scanner(System.in);
-        Pedido start = new Pedido(leitor);
-
-        limparTela();
-
-        Cabeca.exibirCabeca();
-
-        start.menu();
-        
-    }
-
+public class limpartela {
     public static void limparTela() {
         String sistema = System.getProperty("os.name").toLowerCase(); // Obtém o nome do sistema operacional
 
@@ -30,5 +13,5 @@ public class RestaurantManager {
         } catch (Exception e) {
             System.out.println("Erro ao limpar a tela: " + e.getMessage());
         }
-    }
+    }  
 }

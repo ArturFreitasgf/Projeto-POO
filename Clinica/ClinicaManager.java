@@ -3,11 +3,15 @@ package Clinica;
 import java.util.Scanner;
 
 import Clinica.Class.Consulta;
+import Clinica.MetodosClinica.Cabecalh;
 
 public class ClinicaManager {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+
+        Cabecalh.exibirCabecalh();
+        System.out.print("\n");
 
         System.out.println("Digite o ID: ");
         int id = sc.nextInt();

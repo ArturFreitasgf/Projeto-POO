@@ -8,6 +8,8 @@ public class SistemaCentral {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        limparTela();
+
         cabecalhhocentral();
 
         System.out.print("\n");
@@ -37,7 +39,7 @@ public class SistemaCentral {
                 System.out.println("1 - ");
                 System.out.println("2 - ");
                 System.out.println("3 - ");
-                System.out.println("4 - ");
+                System.out.println("4 - Quais eventos têm maior taxa de participação de convidados?");
                 System.out.println("5 - ");
                 break;
             case 5:
@@ -62,5 +64,19 @@ public class SistemaCentral {
         System.out.println("| ( (__  ) _) /    /  )(   )   //    \\/ (_/\\   |");
         System.out.println("|  \\___)(____)\\_)__) (__) (__\\_)\\_/\\_/\\____/   |");
         System.out.println("|______________________________________________|");
+    }
+    
+    public static void limparTela() {
+        String sistema = System.getProperty("os.name").toLowerCase(); // Obtém o nome do sistema operacional
+
+        try {
+            if (sistema.contains("win")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); // Para Windows
+            } else {
+                new ProcessBuilder("clear").inheritIO().start().waitFor(); // Para Linux ou Mac
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao limpar a tela: " + e.getMessage());
+        }
     }
 }

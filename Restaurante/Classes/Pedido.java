@@ -1,5 +1,6 @@
 package Restaurante.Classes;
 
+import Restaurante.Estruturas.Cabeca;
 import Restaurante.Estruturas.PedidoStruct;
 import Restaurante.MetodosPedido.*;
 
@@ -30,6 +31,7 @@ public class Pedido {
         int op;
         do {
             do {
+                Cabeca.exibirCabeca();
                 System.out.println("1) Gerar pedido.");
                 System.out.println("2) Alterar pedido.");
                 System.out.println("3) Cancelar pedido.");

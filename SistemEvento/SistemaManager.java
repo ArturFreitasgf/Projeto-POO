@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
 import SistemEvento.MetodosEvento.Cabecalho;
 import SistemEvento.MetodosEvento.MetodoAddPartiEventoCriado;
+import SistemEvento.MetodosEvento.MetodoAddParticipantesManager;
 import SistemEvento.MetodosEvento.MetodoCadastrarEvento;
 import SistemEvento.MetodosEvento.MetodoCadastrarLocal;
+import SistemEvento.MetodosEvento.MetodoTaxaParticiEvento;
+import SistemEvento.MetodosEvento.MetodoGerarRelatorioManager;
 import SistemEvento.Classe.Evento;
 import SistemEvento.Classe.Local;
-
+import SistemEvento.UtilEvento.limpartela;
 
 public class SistemaManager {
 
@@ -21,18 +23,21 @@ public class SistemaManager {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        // Exibir cabeçalho
-        Cabecalho.exibirCabecalho();
+        limpartela.limparTela();
 
         boolean continuarExecucao = true;  // Controla o loop do sistema
 
         while (continuarExecucao) {
+
+            Cabecalho.exibirCabecalho();
+
             System.out.print("\n");
             System.out.println("////////////////////////////////////////////");
             System.out.println("1) - Criar Evento");
             System.out.println("2) - Entrar em Evento");
-            System.out.println("3) - Voltar ao Sistema Central");
-            System.out.println("4) - Sair");
+            System.out.println("3) - Gerar Relatório");
+            System.out.println("4) - Análise");
+            System.out.println("5) - Sair");
             System.out.println("///////////////////////////////////////////");
             System.out.print("\n");
             System.out.print("Selecione uma das opções: ");
@@ -43,6 +48,7 @@ public class SistemaManager {
             switch (valor) {
                 case 1:
                     // Cadastro de Local
+                    limpartela.limparTela();
                     Local local = MetodoCadastrarLocal.cadastrarLocal(scan);
 
                     // Cadastro de Evento
@@ -53,37 +59,25 @@ public class SistemaManager {
 
                     // Adicionar participantes ao evento
                     MetodoAddPartiEventoCriado.adicionarParticipantes(scan, evento);
+                    limpartela.limparTela();
                     break;
 
                 case 2:
-                    if (eventos.isEmpty()) {
-                        System.out.println("Nenhum evento disponível. Crie um evento primeiro.");
-                    } else {
-                        // Listar eventos disponíveis
-                        System.out.println("\n----------Eventos Disponíveis----------");
-                        for (int i = 0; i < eventos.size(); i++) {
-                            Evento ev = eventos.get(i);
-                            System.out.println((i + 1) + ") " + ev.getNomeevento() + " - " + ev.getDiaevento() + "/" + ev.getMesevento() + "/" + ev.getAnoevento());
-                        }
-
-                        // Selecionar evento
-                        System.out.print("Selecione o número do evento: ");
-                        int eventoIndex = scan.nextInt() - 1;
-                        scan.nextLine(); // Consumir a nova linha residual
-
-                        if (eventoIndex >= 0 && eventoIndex < eventos.size()) {
-                            Evento eventoSelecionado = eventos.get(eventoIndex);
-                            MetodoAddPartiEventoCriado.adicionarParticipantes(scan, eventoSelecionado);
-                        } else {
-                            System.out.println("Número de evento inválido.");
-                        }
-                    }
+                    limpartela.limparTela();
+                    MetodoAddParticipantesManager.adicionarParticipantes(eventos, scan);
                     break;
-                
+
                 case 3:
+                    limpartela.limparTela();
+                    MetodoGerarRelatorioManager.gerarRelatorio(eventos, scan);
                     break;
 
                 case 4:
+                    limpartela.limparTela();
+                    MetodoTaxaParticiEvento.exibirEventosMaiorTaxaParticipacao(eventos);
+                    break;
+
+                case 5:
                     // Encerrar o loop e sair do programa
                     continuarExecucao = false;
                     System.out.println("Encerrando o sistema...");
@@ -94,7 +88,7 @@ public class SistemaManager {
                     break;
             }
         }
-
         scan.close();
     }
+
 }
