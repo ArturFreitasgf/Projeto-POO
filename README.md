@@ -13,10 +13,14 @@ Este projeto é dividido em três sistemas principais, cada um com sua própria 
 O sistema da clínica médica é composto por várias classes fundamentais que desempenham papéis específicos: Consulta.java ; GerenciamentoClinica.java ; GerenciamentoConsulta.java ; GerenciamentoMedico.java ; GerenciamentoPaciente.java ; Medico.java ; Paciente.java ; Relatorio.java.
 
 O Sistema de Clínica é uma aplicação para o gerenciamento de pacientes e consultas em uma clínica médica. O sistema busca proporcionar uma melhor organização e controle sobre as consultas, além de facilitar o acesso às informações dos pacientes. Entre suas principais funcionalidades.
-•	Agendar Consulta: Permite agendem consultas para pacientes, facilitando o controle do calendário de atendimentos.
-•	Cancelar Consulta: Possibilita o cancelamento de consultas já agendadas, garantindo que a agenda esteja sempre atualizada.
-•	Buscar Consulta: Permite a busca por consultas específicas, facilitando o acesso a informações sobre atendimentos passados e futuros.
-•	Buscar Paciente: Facilita a busca e visualização de dados de pacientes, permitindo um gerenciamento mais eficiente do histórico médico e agendamento.
+
+ •	Agendar Consulta: Permite agendem consultas para pacientes, facilitando o controle do calendário de atendimentos.
+ 
+ •	Cancelar Consulta: Possibilita o cancelamento de consultas já agendadas, garantindo que a agenda esteja sempre atualizada.
+ 
+ •	Buscar Consulta: Permite a busca por consultas específicas, facilitando o acesso a informações sobre atendimentos passados e futuros.
+ 
+ •	Buscar Paciente: Facilita a busca e visualização de dados de pacientes, permitindo um gerenciamento mais eficiente do histórico médico e agendamento.
 
 
 
@@ -25,12 +29,18 @@ Sistema de Restaurante (Responsável: Kelvson)
 O sistema do restaurante é estruturado em torno de classes essenciais que permitem a gestão eficaz de mesas e pedidos: Mesa.java ; Pedido.java..
 
 O Sistema de Restaurante é uma aplicação voltada para a gestão de mesas e pedidos em um restaurante. O sistema permite um gerenciamento eficiente das operações do dia a dia, otimizando o atendimento e melhorando a experiência dos clientes. Entre suas principais funcionalidades.
-•	Gerar pedido: Permite que os funcionários registrem novos pedidos dos clientes.
-•	Alterar pedido: Possibilita a modificação de pedidos já registrados.
-•	Cancelar pedido: Permite o cancelamento de pedidos específicos.
-•	Listar pedidos: Exibe todos os pedidos feitos, organizados por mesa ou cliente.
-•	Fechar pedido: Realiza o fechamento de um pedido, gerando a conta a ser paga.
-•	Gerar relatório de vendas: Cria um relatório detalhado sobre as vendas realizadas, facilitando a análise de desempenho e faturamento.
+
+ •	Gerar pedido: Permite que os funcionários registrem novos pedidos dos clientes.
+
+ •	Alterar pedido: Possibilita a modificação de pedidos já registrados.
+
+ •	Cancelar pedido: Permite o cancelamento de pedidos específicos.
+
+ •	Listar pedidos: Exibe todos os pedidos feitos, organizados por mesa ou cliente.
+
+ •	Fechar pedido: Realiza o fechamento de um pedido, gerando a conta a ser paga.
+
+ •	Gerar relatório de vendas: Cria um relatório detalhado sobre as vendas realizadas, facilitando a análise de desempenho e faturamento.
 
 
 
