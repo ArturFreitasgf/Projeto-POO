@@ -1,6 +1,6 @@
 Projeto de Sistemas 
 
- Prof: Lucas 
+Prof: Lucas 
 
 Participantes: 
 
@@ -16,31 +16,6 @@ Descrição do Projeto:
 
 Este projeto é dividido em três sistemas principais, cada um com sua própria funcionalidade e responsável. O objetivo é criar soluções de software para diferentes cenários, como a gestão de eventos, restaurantes e clínicas, com foco na organização, automação de processos e geração de relatórios. 
 
-Sistema Central/
-│
-├── Clinica/
-|   |
-│   │── Classe/
-|   |
-|   │── ClinicaManager.java/
-|
-├── Restaurante/
-│   │   ├── Classe/
-│   │   │     
-│   │   |── Estruturas/
-│   │   |
-│   │   ├── MetodosPedidos/    
-│
-|── SistemEvento/
-│   │   ├── Classe/
-│   │   │     
-│   │   |── MetodosEvento/
-│   │   |
-│   │   ├── SistemaManager.java/
-|    
-|── Utils/
-|
-|──SistemaCentral.java
   
 
 Sistema de Eventos (Responsável: Eliel): 
