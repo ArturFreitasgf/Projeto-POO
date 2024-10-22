@@ -12,6 +12,7 @@ public class InfoParticipantes {
         System.out.print("Email do Participante: ");
         String emailParticipante = scan.nextLine();
         System.out.print("Número de Celular do Participante: ");
+        // padrão teste
         String numeroCelularParticipante = scan.nextLine();
 
         return new Participante(nomeParticipante, emailParticipante, numeroCelularParticipante);
