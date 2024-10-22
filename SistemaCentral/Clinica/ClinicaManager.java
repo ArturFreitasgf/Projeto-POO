@@ -16,6 +16,7 @@ public class ClinicaManager {
 
     public static void menu(Scanner leitor) {
         int opcao = 0;
+        LimparTela.limparTela();
         do {
             System.out.println("1. Agendar Consulta");
             System.out.println("2. Cancelar Consulta");
