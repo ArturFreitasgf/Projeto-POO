@@ -63,6 +63,6 @@ Perguntas (Análise):
 
 1)Qual médico é o mais solicitado para consultas ?
 
-3) Quais itens do cardápio têm mais popularidade no restaurante ?
+2)Quais itens do cardápio têm mais popularidade no restaurante ?
 
-5) Quais eventos têm maior taxa de participação ?
+3)Quais eventos têm maior taxa de participação ?
