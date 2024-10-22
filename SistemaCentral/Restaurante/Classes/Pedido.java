@@ -2,6 +2,7 @@ package Restaurante.Classes;
 
 import Restaurante.Estruturas.PedidoStruct;
 import Restaurante.MetodosPedido.*;
+import Utils.Cabecalhos;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class Pedido {
     public void menu(){
         int op;
         do {
+            Cabecalhos.cabecalhoRestaurante();
             do {
                 System.out.println("1) Gerar pedido.");
                 System.out.println("2) Alterar pedido.");

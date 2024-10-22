@@ -20,7 +20,7 @@ public class GerenciamentoClinica {
             System.out.println("Paciente não encontrado. Deseja cadastrar um novo? (S/N)");
             String resposta = leitor.nextLine();
             if (resposta.equalsIgnoreCase("S")) {
-                GerenciamentoPaciente.adicionarPaciente(leitor);
+                GerenciamentoPaciente.cadastrarPaciente(leitor);
                 paciente = GerenciamentoPaciente.buscarPaciente(nomePaciente);
             } else {
                 return;
