@@ -18,7 +18,6 @@ public class SistemaCentral {
         System.out.println("1 - Sistema Clinica");
         System.out.println("2 - Sistema Restaurante");
         System.out.println("3 - Sistema Evento");
-        System.out.println("4 - Análise");
         System.out.println("///////////////////////////////////////////");
         System.out.print("\n");
         System.out.print("Selecione uma das opções: ");
@@ -34,13 +33,6 @@ public class SistemaCentral {
                 break;
             case 3:
                 SistemaManager.main(new String[]{});
-                break;
-            case 4:
-                System.out.println("1 - ");
-                System.out.println("2 - ");
-                System.out.println("3 - ");
-                System.out.println("4 - ");
-                System.out.println("5 - ");
                 break;
             default:
                 System.out.println("Opção inválida.");
