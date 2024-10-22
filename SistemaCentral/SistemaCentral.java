@@ -4,9 +4,15 @@ import Restaurante.RestaurantManager;
 import SistemEvento.SistemaManager;
 import Clinica.ClinicaManager;
 
+import Utils.*;
+
 public class SistemaCentral {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        LimparTela.limparTela();
+
+        Cabecalhos.cabecalhocentral();
 
         System.out.println("////////////////////////////////////////////");
         System.out.println("1 - Sistema Clinica");

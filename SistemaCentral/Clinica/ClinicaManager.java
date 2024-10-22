@@ -3,9 +3,14 @@ package Clinica;
 import java.util.Scanner;
 import Clinica.Class.*;
 
+import Utils.*;
+
 public class ClinicaManager {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
+
+        Cabecalhos.cabecalhoClinica();
+
         menu(leitor);
     }
 

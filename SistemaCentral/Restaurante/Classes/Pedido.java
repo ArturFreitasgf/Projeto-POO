@@ -105,9 +105,9 @@ public class Pedido {
     private Mesa getMesaById(int mesaId) {
         for (Mesa mesa : mesas) {
             if (mesa.getTableNum() == mesaId) {
-                return mesa; // Retorna a mesa correspondente
+                return mesa;
             }
         }
-        return null; // Retorna null se a mesa não for encontrada
+        return null;
     }
 }
