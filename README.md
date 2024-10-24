@@ -9,8 +9,12 @@ Participantes:
 •	Artur / Kelvson 
  
 Descrição do Projeto:
+
 Este projeto é dividido em três sistemas principais, cada um com sua própria funcionalidade e responsável. O objetivo é criar soluções de software para diferentes cenários, como a gestão de eventos, restaurantes e clínicas, com foco na organização, automação de processos e geração de relatórios.
  
+
+
+
 Sistema de Eventos (Responsável: Eliel)
 
 O sistema de eventos é composto por classes fundamentais que facilitam o gerenciamento de eventos e participantes: Evento.java ; Local.java ; Participante.java.
@@ -25,6 +29,8 @@ O Sistema de Eventos é uma aplicação para gerenciar eventos, incluindo o cada
 
 •	Análise da taxa de participação: O sistema calcula e exibe a taxa de participação dos eventos, listando-os em ordem decrescente de participação.
  
+
+
 
 Sistema de Restaurante (Responsável: Kelvson)
 
@@ -44,6 +50,10 @@ O Sistema de Restaurante é uma aplicação voltada para a gestão de mesas e pe
 
 •	Gerar relatório de vendas: Cria um relatório detalhado sobre as vendas realizadas, facilitando a análise de desempenho e faturamento.
 
+
+
+
+
 Sistema de Clínica (Responsáveis: Artur e Kelvson)
 
 O sistema da clínica médica é composto por várias classes fundamentais que desempenham papéis específicos: Consulta.java ; GerenciamentoClinica.java ; GerenciamentoConsulta.java ; GerenciamentoMedico.java ; GerenciamentoPaciente.java ; Medico.java ; Paciente.java ; Relatorio.java.
@@ -57,6 +67,8 @@ O Sistema de Clínica é uma aplicação para o gerenciamento de pacientes e con
 •	Buscar Consulta: Permite a busca por consultas específicas, facilitando o acesso a informações sobre atendimentos passados e futuros.
 
 •	Buscar Paciente: Facilita a busca e visualização de dados de pacientes, permitindo um gerenciamento mais eficiente do histórico médico e agendamento.
+
+
 
 
 Perguntas (Análise):
