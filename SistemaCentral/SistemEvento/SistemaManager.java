@@ -20,9 +20,9 @@ public class SistemaManager {
 
         LimparTela.limparTela();
 
-        boolean continuarExecucao = true;  // Controla o loop do sistema
+        int valor;
 
-        while (continuarExecucao) {
+        do{
 
             Cabecalhos.cabecalhoEventos();
 
@@ -37,7 +37,7 @@ public class SistemaManager {
             System.out.print("\n");
             System.out.print("Selecione uma das opções: ");
 
-            int valor = scan.nextInt();
+            valor = scan.nextInt();
             scan.nextLine(); // Consumir a nova linha residual após o nextInt()
 
             switch (valor) {
@@ -73,17 +73,12 @@ public class SistemaManager {
                     break;
 
                 case 5:
-                    // Encerrar o loop e sair do programa
-                    continuarExecucao = false;
-                    scan.nextLine();
-                    System.out.println("Encerrando o sistema...");
+                    System.out.println("Saindo...");
                     break;
-
                 default:
                     System.out.println("Opção inválida.");
                     break;
             }
-        }
-        scan.close();
+        } while(valor != 5);
     }
 }
