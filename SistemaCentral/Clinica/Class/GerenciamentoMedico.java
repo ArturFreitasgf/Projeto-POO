@@ -33,6 +33,7 @@ public class GerenciamentoMedico {
             }
         }
         System.out.println("Médico não encontrado.");
+
         return null;
     }
 
@@ -40,6 +41,16 @@ public class GerenciamentoMedico {
         Medico medico = buscarMedico(nome);
         if (medico != null) {
             System.out.println("O médico está " + (medico.isDisponivel() ? "disponível" : "indisponível"));
+        } else {
+            System.out.println("Médico não encontrado.");
+        }
+    }
+
+    public static void tornarDisponivel(String nome) {
+        Medico medico = buscarMedico(nome);
+        if (medico != null) {
+            medico.setDisponivel(true);
+            System.out.println("Médico " + medico.getNome() + " agora está disponível.");
         } else {
             System.out.println("Médico não encontrado.");
         }

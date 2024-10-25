@@ -108,18 +108,4 @@ public class GerenciamentoClinica {
             System.out.println("Nenhuma consulta encontrada para este paciente.");
         }
     }
-
-    public static void buscarPaciente(Scanner leitor) {
-        System.out.println("Digite o nome do paciente:");
-        String nomePaciente = leitor.nextLine();
-        Paciente paciente = GerenciamentoPaciente.buscarPaciente(nomePaciente);
-
-        if (paciente != null) {
-            System.out.println("Paciente encontrado: " + paciente.getNome() +
-                               ", CPF: " + paciente.getCpf() +
-                               ", Telefone: " + paciente.getTelefone());
-        } else {
-            System.out.println("Paciente não encontrado.");
-        }
-    }
 }
