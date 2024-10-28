@@ -13,13 +13,27 @@ public class Consulta {
         this.dataHora = dataHora;
     }
 
-    // Getters e setters
-    public Paciente getPaciente() { return paciente; }
-    public void setPaciente(Paciente paciente) { this.paciente = paciente; }
+    public Paciente getPaciente() {
+        return paciente;
+    }
 
-    public Medico getMedico() { return medico; }
-    public void setMedico(Medico medico) { this.medico = medico; }
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
 
-    public Date getDataHora() { return dataHora; }
-    public void setDataHora(Date dataHora) { this.dataHora = dataHora; }
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public Date getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(Date dataHora) {
+        this.dataHora = dataHora;
+    }
 }

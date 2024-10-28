@@ -12,10 +12,11 @@ public class SistemaCentral {
 
         LimparTela.limparTela();
 
-        Cabecalhos.cabecalhocentral();
-        
         int sistema;
         do{
+            LimparTela.limparTela();
+            
+            Cabecalhos.cabecalhocentral();
 
             System.out.println("////////////////////////////////////////////");
             System.out.println("1 - Sistema Clinica");

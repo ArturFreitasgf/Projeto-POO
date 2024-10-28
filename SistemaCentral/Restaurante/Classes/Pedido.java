@@ -13,7 +13,7 @@ public class Pedido {
     private List<Mesa> mesas; // Lista de mesas
     private Scanner scanner;
 
-    public Pedido(Scanner leitor){
+    public Pedido(Scanner leitor) {
         this.pedidoList = new ArrayList<>();
         this.mesas = new ArrayList<>(); // Inicializa a lista de mesas
         this.scanner = leitor;
@@ -27,7 +27,7 @@ public class Pedido {
         }
     }
 
-    public void menu(){
+    public void menu() {
         int op;
         do {
             Cabecalhos.cabecalhoRestaurante();
@@ -45,16 +45,20 @@ public class Pedido {
                 }
                 op = scanner.nextInt();
             } while (op < 0 || op > 6);
-    
+
             scanner.nextLine(); // Limpar Buffer
-    
+
             switch (op) {
                 case 1: // gerar pedido
                     System.out.println("Escolha uma mesa (1 a " + mesas.size() + "): ");
                     int mesaId = scanner.nextInt();
                     Mesa mesa = getMesaById(mesaId);
                     if (mesa != null && !mesa.getTableStatus()) {
-                        AdicionarPedido.adicionarPedido(pedidoList, scanner, mesa);
+                        System.out.println("Tem aniversariante na mesa? (s/n)");
+                        char temAniversariante = scanner.next().charAt(0);
+                        boolean isAniversariante = (temAniversariante == 's' || temAniversariante == 'S');
+                        
+                        AdicionarPedido.adicionarPedido(pedidoList, scanner, mesa, isAniversariante);
                         mesa.setTableStatus(true); // Marca a mesa como ocupada
                     } else {
                         System.out.println("Mesa inválida ou já ocupada.");
@@ -72,7 +76,7 @@ public class Pedido {
                         }
                         id = scanner.nextInt();
                     } while (id < 0);
-    
+
                     scanner.nextLine();
                     AlterarPedido.alterarPedido(pedidoList, id, scanner);
                     break;

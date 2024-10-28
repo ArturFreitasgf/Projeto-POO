@@ -27,11 +27,11 @@ public class Participante {
         this.email = email;
     }
 
-    public String getNumerocelular() {
+    public String getNumeroCelular() {
         return numerocelular;
     }
 
-    public void setNumerocelular(String numerocelular) {
-        this.numerocelular = numerocelular;
+    public void setNumeroCelular(String numeroCelular) {
+        this.numerocelular = numeroCelular;
     }
 }
