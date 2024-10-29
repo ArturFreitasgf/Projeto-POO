@@ -16,7 +16,7 @@ public class GerarRelatorio {
         System.out.println("\n------------Lista de Participantes-------------");
         for (int i = 0; i < evento.getTotalparticipantes(); i++) {
             Participante p = evento.getParticipantes()[i];
-            System.out.println("Nome: " + p.getNome() + ", Email: " + p.getEmail() + ", Celular: " + p.getNumerocelular());
+            System.out.println("Nome: " + p.getNome() + ", Email: " + p.getEmail() + ", Celular: " + p.getNumeroCelular());
         }
     }
 

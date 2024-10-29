@@ -24,20 +24,25 @@ public class GerenciamentoMedico {
     }
 
     public static Medico buscarMedico(String nome) {
-        return medicos.stream()
-                .filter(medico -> medico.getNome().equalsIgnoreCase(nome))
-                .findFirst()
-                .orElseGet(() -> {
-                    System.out.println("Médico não encontrado.");
-                    return null;
-                });
+        for (Medico medico : medicos) {
+            if (medico.getNome().equalsIgnoreCase(nome)) {
+                // Médico encontrado, imprimir as informações
+                System.out.println("Dr. " + medico.getNome() + ": Especialidade em " + medico.getEspecialidade());
+                System.out.println("Disponibilidade: " + (medico.isDisponivel() ? "Disponível" : "Indisponível"));
+                return medico; // Retorna o médico encontrado
+            }
+        }
+        System.out.println("Médico não encontrado.");
+        return null;
     }
 
-    public static Medico buscarMedicoPorCrm(String crm) {
-        return medicos.stream()
-                .filter(medico -> medico.getCrm().equalsIgnoreCase(crm))
-                .findFirst()
-                .orElse(null);
+    public static Medico buscarMedicoPorCrm(String crm){
+        for(Medico medico: medicos) {
+            if(medico.getCrm().equalsIgnoreCase(crm)){
+                return medico;
+            }
+        }
+        return null;
     }
 
     public static void tornarDisponivel(String nomeMedico) {

@@ -22,12 +22,11 @@ public class GerenciamentoPaciente {
     }
 
     public static Paciente buscarPaciente(String nome) {
-        return pacientes.stream()
-                .filter(paciente -> paciente.getNome().equalsIgnoreCase(nome))
-                .findFirst()
-                .orElseGet(() -> {
-                    System.out.println("Paciente não encontrado.");
-                    return null;
-                });
+        for (Paciente paciente : pacientes) {
+            if (paciente.getNome().equalsIgnoreCase(nome)) {
+                return paciente;
+            }
+        }
+        return null;
     }
 }
