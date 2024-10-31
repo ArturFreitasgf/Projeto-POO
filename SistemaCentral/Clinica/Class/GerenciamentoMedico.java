@@ -27,7 +27,9 @@ public class GerenciamentoMedico {
         for (Medico medico : medicos) {
             if (medico.getNome().equalsIgnoreCase(nome)) {
                 // Médico encontrado, imprimir as informações
-                System.out.println("Dr. " + medico.getNome() + ": Especialidade em " + medico.getEspecialidade());
+                System.out.println("Dr. " + medico.getNome());
+                System.out.println("Especialidade: " + medico.getEspecialidade());
+                System.out.println("CRM: " + medico.getCrm());
                 System.out.println("Disponibilidade: " + (medico.isDisponivel() ? "Disponível" : "Indisponível"));
                 return medico; // Retorna o médico encontrado
             }

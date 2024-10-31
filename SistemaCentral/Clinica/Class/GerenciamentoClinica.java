@@ -7,9 +7,11 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class GerenciamentoClinica {
-    private static ArrayList<Paciente> pacientes = new ArrayList<>();
-    private static ArrayList<Medico> medicos = new ArrayList<>();
     private static ArrayList<Consulta> consultas = new ArrayList<>();
+
+    public static ArrayList<Consulta> getConsultas() {
+        return consultas;
+    }    
 
     public static void agendarConsulta(Scanner leitor) {
         System.out.println("Digite o nome do paciente:");
