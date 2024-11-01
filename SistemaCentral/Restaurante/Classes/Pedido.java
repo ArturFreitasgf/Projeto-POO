@@ -30,8 +30,8 @@ public class Pedido {
 
     public void menu() {
         int op;
+        LimparTela.limparTela();
         do {
-            LimparTela.limparTela();
             Cabecalhos.cabecalhoRestaurante();
             do {
                 System.out.println("1) Gerar pedido.");
