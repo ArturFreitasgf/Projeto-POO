@@ -1,24 +1,17 @@
 package Clinica.Class;
 
-public class Medico {
-    private String nome;
+import Estrutura.Clases.Pessoa;
+
+public class Medico extends Pessoa {
     private String especialidade;
     private boolean disponivel;
     private String crm;
 
     public Medico(String nome, String especialidade, boolean disponivel, String crm) {
-        this.nome = nome;
+        super(nome);
         this.especialidade = especialidade;
         this.disponivel = disponivel;
         this.crm = crm;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getEspecialidade() {

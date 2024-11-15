@@ -1,22 +1,15 @@
 package SistemEvento.Classe;
 
-public class Participante {
-    private String nome;
+import Estrutura.Clases.Pessoa;
+
+public class Participante extends Pessoa {
     private String email;
-    private String numerocelular;
+    private String numeroCelular;
 
     public Participante(String nome, String email, String numeroCelular) {
-        this.nome = nome;
+        super(nome); 
         this.email = email;
-        this.numerocelular = numeroCelular;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+        this.numeroCelular = numeroCelular;
     }
 
     public String getEmail() {
@@ -28,10 +21,10 @@ public class Participante {
     }
 
     public String getNumeroCelular() {
-        return numerocelular;
+        return numeroCelular;
     }
 
     public void setNumeroCelular(String numeroCelular) {
-        this.numerocelular = numeroCelular;
+        this.numeroCelular = numeroCelular;
     }
 }

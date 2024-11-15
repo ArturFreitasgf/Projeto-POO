@@ -1,22 +1,15 @@
 package Clinica.Class;
 
-public class Paciente {
-    private String nome;
+import Estrutura.Clases.Pessoa;
+
+public class Paciente extends Pessoa{
     private String cpf;
     private String telefone;
 
     public Paciente(String nome, String cpf, String telefone) {
-        this.nome = nome;
+        super(nome);
         this.cpf = cpf;
         this.telefone = telefone;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getCpf() {
