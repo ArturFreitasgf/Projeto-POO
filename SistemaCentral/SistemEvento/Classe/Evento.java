@@ -5,17 +5,19 @@ public class Evento {
     private int diaevento;
     private int mesevento;
     private int anoevento;
+    private float valoringre;
     private int capacidade;
     private Local local;
     private int totalparticipantes;
     private Participante[] participantes;
 
-    public Evento(String nomeevento, int diaevento, int mesevento, int anoevento, int capacidade, Local local) {
+    public Evento(String nomeevento, int diaevento, int mesevento, int anoevento, int capacidade, float valoringre, Local local) {
         this.nomeevento = nomeevento;
         this.diaevento = diaevento;
         this.mesevento = mesevento;
         this.anoevento = anoevento;
         this.capacidade = capacidade;
+        this.valoringre = valoringre;
         this.local = local;
         this.totalparticipantes = 0;
         this.participantes = new Participante[capacidade];
@@ -64,6 +66,14 @@ public class Evento {
 
     public void setCapacidade(int capacidade) {
         this.capacidade = capacidade;
+    }
+
+    public float getValoringre() {
+        return valoringre;
+    }
+
+    public void setValoringre(float valoringre) {
+        this.valoringre = valoringre;
     }
 
     public Local getLocal() {

@@ -13,6 +13,9 @@ public class CadastrarEvento {
         System.out.print("Capacidade Máxima do Evento: ");
         int capacidade = scan.nextInt();
 
+        System.out.print("Valor (ingre) Evento: ");
+        float valoringre = scan.nextFloat();
+
         // Cadastro da Data
         System.out.print("Dia do Evento: ");
         int diaevento = scan.nextInt();
@@ -22,6 +25,6 @@ public class CadastrarEvento {
         int anoevento = scan.nextInt();
         scan.nextLine(); // Consumir a nova linha
 
-        return new Evento(nomeevento, diaevento, mesevento, anoevento, capacidade, local);
+        return new Evento(nomeevento, diaevento, mesevento, anoevento, capacidade, valoringre, local);
     }
 }

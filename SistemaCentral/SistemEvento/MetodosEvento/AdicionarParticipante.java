@@ -35,7 +35,7 @@ public class AdicionarParticipante {
                 Medico medico = GerenciamentoMedico.buscarMedicoPorCrm(crm);
                 if (medico != null) {
                     System.out.println("Médico encontrado. Aplicando desconto.");
-                    participante.setNome(participante.getNome() + " %Desconto% - 20%"); // Adiciona texto ao nome
+                    participante.setNome(participante.getNome() + " %Desconto% - 20%"); 
                 } else {
                     System.out.println("CRM inválido. Nenhum desconto aplicado.");
                 }

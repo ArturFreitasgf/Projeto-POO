@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import SistemEvento.Classe.Evento;
+
 import SistemEvento.Classe.Participante;
 
 public class GerarRelatorio {
@@ -12,12 +13,30 @@ public class GerarRelatorio {
         System.out.println("Data: " + evento.getDiaevento() + "/" + evento.getMesevento() + "/" + evento.getAnoevento());
         System.out.println("Local: " + evento.getLocal().getEndereco());
         System.out.println("Capacidade Máxima: " + evento.getCapacidade());
+        System.out.println("Valor (ingre) Evento: " + evento.getValoringre());
+        float receita = 0.0f;
+        // Itera sobre todos os participantes do evento
+        for (int i = 0; i < evento.getTotalparticipantes(); i++) {
+            Participante p = evento.getParticipantes()[i];
+            
+            // Verifica se o participante tem desconto (baseado na alteração do nome)
+            if (p.getNome().contains("%Desconto%")) {
+                // Aplica um desconto de 20% para participantes com médico associado
+                receita += evento.getValoringre() * 0.8f;
+            } else {
+                // Se não houver desconto, o valor é integral
+                receita += evento.getValoringre();
+            }
+        }
+
+        System.out.println("Receita Evento: R$ " + String.format("%.2f", receita));
         System.out.println("Total de Participantes: " + evento.getTotalparticipantes());
         System.out.println("\n------------Lista de Participantes-------------");
         for (int i = 0; i < evento.getTotalparticipantes(); i++) {
             Participante p = evento.getParticipantes()[i];
             System.out.println("Nome: " + p.getNome() + ", Email: " + p.getEmail() + ", Celular: " + p.getNumeroCelular());
         }
+
     }
 
     public static void gerarRelatorio(List<Evento> eventos, Scanner scan) {
@@ -42,4 +61,5 @@ public class GerarRelatorio {
             }
         }
     }
+
 }

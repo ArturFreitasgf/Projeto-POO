@@ -4,6 +4,7 @@ import java.util.List;
 
 import SistemEvento.Classe.Evento;
 
+
 public class Estatisticas {
     public static void exibirEventosMaiorTaxaParticipacao(List<Evento> eventos) {
         if (eventos.isEmpty()) {
