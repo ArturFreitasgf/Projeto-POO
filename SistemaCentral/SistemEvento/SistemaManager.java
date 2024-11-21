@@ -11,8 +11,7 @@ import SistemEvento.Classe.Evento;
 import SistemEvento.Classe.Local;
 
 public class SistemaManager {
-
-    // Lista de eventos criados
+    
     private static List<Evento> eventos = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -38,7 +37,7 @@ public class SistemaManager {
             System.out.print("Selecione uma das opções: ");
 
             valor = scan.nextInt();
-            scan.nextLine(); // Consumir a nova linha residual após o nextInt()
+            scan.nextLine(); 
 
             switch (valor) {
                 case 1:

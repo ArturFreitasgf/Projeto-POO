@@ -1,5 +1,6 @@
 package Clinica.Class;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Consulta {
@@ -35,5 +36,13 @@ public class Consulta {
 
     public void setDataHora(Date dataHora) {
         this.dataHora = dataHora;
+    }
+
+    @Override
+    public String toString() {
+        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        return "Consulta [Paciente: " + paciente.getNome() + 
+               ", Médico: " + medico.getNome() + 
+               ", Data/Hora: " + formatoData.format(dataHora) + "]";
     }
 }

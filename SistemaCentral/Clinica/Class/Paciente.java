@@ -19,8 +19,7 @@ public class Paciente extends Pessoa {
     }
 
     @Override
-    public void exibirInformacoes() {
-        super.exibirInformacoes();
-        System.out.println("CPF: " + cpf);
+    public String toString() {
+        return "Paciente [Nome: " + getNome() + ", CPF: " + cpf + "]";
     }
 }
