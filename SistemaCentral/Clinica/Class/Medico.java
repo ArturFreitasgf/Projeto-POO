@@ -1,6 +1,6 @@
 package Clinica.Class;
 
-import Estrutura.Clases.Pessoa;
+import Utils.Classes.Pessoa;
 
 public class Medico extends Pessoa {
     private String especialidade;

@@ -1,15 +1,13 @@
 package Clinica.Class;
 
-import Estrutura.Clases.Pessoa;
+import Utils.Classes.Pessoa;
 
-public class Paciente extends Pessoa{
+public class Paciente extends Pessoa {
     private String cpf;
-    private String telefone;
 
-    public Paciente(String nome, String cpf, String telefone) {
-        super(nome);
+    public Paciente(String nome, String email, String numeroCelular, String cpf) {
+        super(nome, email, numeroCelular);
         this.cpf = cpf;
-        this.telefone = telefone;
     }
 
     public String getCpf() {
@@ -20,11 +18,9 @@ public class Paciente extends Pessoa{
         this.cpf = cpf;
     }
 
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    @Override
+    public void exibirInformacoes() {
+        super.exibirInformacoes();
+        System.out.println("CPF: " + cpf);
     }
 }

@@ -1,30 +1,26 @@
 package SistemEvento.Classe;
 
-import Estrutura.Clases.Pessoa;
+import Utils.Classes.Pessoa;
 
 public class Participante extends Pessoa {
-    private String email;
-    private String numeroCelular;
+    private String tipoIngresso; // Por exemplo, VIP ou Comum
 
-    public Participante(String nome, String email, String numeroCelular) {
-        super(nome); 
-        this.email = email;
-        this.numeroCelular = numeroCelular;
+    public Participante(String nome, String email, String numeroCelular, String tipoIngresso) {
+        super(nome, email, numeroCelular);
+        this.tipoIngresso = tipoIngresso;
     }
 
-    public String getEmail() {
-        return email;
+    public String getTipoIngresso() {
+        return tipoIngresso;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTipoIngresso(String tipoIngresso) {
+        this.tipoIngresso = tipoIngresso;
     }
 
-    public String getNumeroCelular() {
-        return numeroCelular;
-    }
-
-    public void setNumeroCelular(String numeroCelular) {
-        this.numeroCelular = numeroCelular;
+    @Override
+    public void exibirInformacoes() {
+        super.exibirInformacoes();
+        System.out.println("Tipo de Ingresso: " + tipoIngresso);
     }
 }
