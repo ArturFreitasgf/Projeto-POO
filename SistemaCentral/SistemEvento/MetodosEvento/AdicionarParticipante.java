@@ -48,9 +48,6 @@ public class AdicionarParticipante {
             System.out.print("Deseja adicionar outro participante? (sim/nao): ");
             continuar = scan.nextLine();
         } while (continuar.equalsIgnoreCase("sim"));
-
-        System.out.println("\n----------Gerando Relatório do Evento----------");
-        GerarRelatorio.gerarRelatorio(evento);
     }
 
     public static void adicionarParticipantes(List<Evento> eventos, Scanner scan) {
@@ -60,7 +57,7 @@ public class AdicionarParticipante {
             System.out.println("\n----------Eventos Disponíveis----------");
             for (int i = 0; i < eventos.size(); i++) {
                 Evento ev = eventos.get(i);
-                System.out.println((i + 1) + ") " + ev.getNomeevento() + " - " + ev.getDiaevento() + "/" + ev.getMesevento() + "/" + ev.getAnoevento());
+                System.out.println((i + 1) + ") " + ev.getNomeevento() + " - " + ev.getDiaevento() + "/" + ev.getMesevento() + "/" + ev.getAnoevento() + " - " + "Valor (Ingresso) Evento: R$ " + ev.getValoringre());
             }
 
             System.out.print("Selecione o número do evento: ");

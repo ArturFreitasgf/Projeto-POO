@@ -9,18 +9,19 @@ import Utils.Interfaces.IMedico;
 public class GerenciamentoMedico {
     private static ArrayList<Medico> medicos = new ArrayList<>();
 
-    public static IMedico adicionarMedico(Scanner leitor) {  // Alterado para retornar IMedico
-        System.out.println("Digite o nome do médico:");
+    public static IMedico adicionarMedico(Scanner leitor) {// Alterado para retornar IMedico
+        System.out.println("\n----------Cadastrar Médico----------");
+        System.out.print("Digite o nome do médico: ");
         String nome = leitor.nextLine();
-        System.out.println("Digite o email do médico:");
+        System.out.print("Digite o email do médico: ");
         String email = leitor.nextLine();  // Novo parâmetro
-        System.out.println("Digite o número de celular do médico:");
+        System.out.print("Digite o número de celular do médico:  ");
         String numeroCelular = leitor.nextLine();  // Novo parâmetro
-        System.out.println("Digite a especialidade do médico:");
+        System.out.print("Digite a especialidade do médico: ");
         String especialidade = leitor.nextLine();
-        System.out.println("Digite o CRM do médico:");
+        System.out.print("Digite o CRM do médico: ");
         String crm = leitor.nextLine();
-        System.out.println("O médico está disponível? (S/N)");
+        System.out.print("O médico está disponível? (S/N): ");
         boolean disponivel = leitor.nextLine().equalsIgnoreCase("S");
 
         // Usando IMedico para permitir qualquer implementação
@@ -65,7 +66,7 @@ public class GerenciamentoMedico {
             System.out.println("Nenhum médico cadastrado.");
             return;
         }
-        System.out.println("Lista de médicos cadastrados:");
+        System.out.println("Lista de médicos cadastrados: ");
         for (Medico medico : medicos) {
             System.out.println(medico);
         }

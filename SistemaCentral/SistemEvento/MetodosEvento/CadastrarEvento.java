@@ -13,7 +13,7 @@ public class CadastrarEvento {
         System.out.print("Capacidade Máxima do Evento: ");
         int capacidade = scan.nextInt();
         
-        System.out.print("Valor (ingre) Evento: ");
+        System.out.print("Valor (ingresso) Evento: ");
         float valoringre = scan.nextFloat();
 
         // Cadastro da Data

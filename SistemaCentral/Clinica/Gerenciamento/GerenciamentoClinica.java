@@ -18,17 +18,32 @@ public class GerenciamentoClinica {
 
     public static void listarConsultasPorMedico(String nomeMedico) {
         IMedico medico = GerenciamentoMedico.buscarMedico(nomeMedico);
-
+    
         if (medico == null) {
             System.out.println("Médico não encontrado.");
             return;
         }
-
+    
+        // Verifica se a lista de consultas não está vazia
+        if (consultas.isEmpty()) {
+            System.out.println("Nenhuma consulta agendada.");
+            return;
+        }
+    
         System.out.println("Consultas do médico " + medico.getNome() + ":");
+    
+        boolean encontrouConsulta = false;
+        // Percorre as consultas para encontrar as que pertencem ao médico especificado
         for (Consulta consulta : consultas) {
             if (consulta.getMedico().getCrm().equalsIgnoreCase(medico.getCrm())) {
                 System.out.println(consulta);
+                encontrouConsulta = true;
             }
+        }
+    
+        // Caso o médico não tenha consultas agendadas
+        if (!encontrouConsulta) {
+            System.out.println("Não há consultas agendadas para este médico.");
         }
     }
 
@@ -52,7 +67,7 @@ public class GerenciamentoClinica {
     }
 
     public static void buscarConsulta(Scanner leitor) {
-        System.out.println("Digite o nome do paciente:");
+        System.out.println("Digite o nome do paciente: ");
         String nomePaciente = leitor.nextLine();
 
         boolean encontrado = false;

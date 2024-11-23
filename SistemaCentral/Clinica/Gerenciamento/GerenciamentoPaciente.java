@@ -10,16 +10,17 @@ public class GerenciamentoPaciente {
 
     // Método para cadastrar pacientes
     public static Paciente cadastrarPaciente(Scanner leitor) {
-        System.out.println("Digite o nome do paciente:");
+        System.out.println("\n----------Cadastrar Paciente----------");
+        System.out.print("Digite o nome do paciente: ");
         String nome = leitor.nextLine();
 
-        System.out.println("Digite o CPF do paciente:");
+        System.out.print("Digite o CPF do paciente: ");
         String cpf = leitor.nextLine(); // Altere para nextLine() para capturar o CPF como uma string
 
-        System.out.println("Digite o telefone do paciente:");
+        System.out.print("Digite o telefone do paciente: ");
         String telefone = leitor.nextLine();
 
-        System.out.println("Digite o email do paciente:");
+        System.out.print("Digite o email do paciente: ");
         String email = leitor.nextLine(); // Agora o e-mail será corretamente solicitado
 
         // Verifica se o CPF já está cadastrado
@@ -40,18 +41,13 @@ public class GerenciamentoPaciente {
     public static Paciente buscarPaciente(String nome) {
         for (Paciente paciente : pacientes) {
             if (paciente.getNome().equalsIgnoreCase(nome)) {
-                // Exibindo os detalhes do paciente aqui
-                System.out.println("Paciente encontrado:");
-                System.out.println("Nome: " + paciente.getNome());
-                System.out.println("CPF: " + paciente.getCpf());
-                System.out.println("Celular: " + paciente.getNumeroCelular());
-                System.out.println("Email: " + paciente.getEmail());
-                return paciente;
+                return paciente;  // Apenas retorna o paciente sem imprimir nada
             }
         }
         System.out.println("Paciente não encontrado.");
         return null;
     }
+
 
     // Método para buscar pacientes por CPF
     public static Paciente buscarPacientePorCpf(String cpf) {
@@ -62,6 +58,7 @@ public class GerenciamentoPaciente {
         }
         return null;
     }
+
 
     // Listar todos os pacientes cadastrados
     public static void listarPacientes() {
@@ -76,7 +73,7 @@ public class GerenciamentoPaciente {
         }
     }
 
-    // Listar consultas de um paciente específico
+        // Listar consultas de um paciente específico
     public static void listarConsultasDoPaciente(String nomePaciente) {
         Paciente paciente = buscarPaciente(nomePaciente);
 
@@ -85,13 +82,20 @@ public class GerenciamentoPaciente {
             return;
         }
 
+        // Exibir os detalhes do paciente
+        System.out.println("Paciente encontrado");
+        System.out.println("Nome: " + paciente.getNome());
+        System.out.println("CPF: " + paciente.getCpf());
+        System.out.println("Celular: " + paciente.getNumeroCelular());
+        System.out.println("Email: " + paciente.getEmail());
+
+        // Listar as consultas
         System.out.println("Consultas do paciente " + paciente.getNome() + ":");
         boolean encontrouConsulta = false;
 
         for (Consulta consulta : GerenciamentoClinica.getConsultas()) {
             if (consulta.getPaciente().equals(paciente)) {
-                System.out.println("Médico: " + consulta.getMedico().getNome() +
-                        ", Data/Hora: " + consulta.getDataHora());
+                System.out.println("Médico: " + consulta.getMedico().getNome() +", Data/Hora: " + consulta.getDataHora());
                 encontrouConsulta = true;
             }
         }

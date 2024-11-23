@@ -23,10 +23,6 @@ public class Evento {
         this.participantes = new Participante[capacidade];
     }
     
-    private double desconto; // Novo campo para desconto
-
-    public double getDesconto() { return desconto; }
-    public void setDesconto(double desconto) { this.desconto = desconto; }
     public String getNomeevento() {
 
         return nomeevento;

@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import SistemEvento.Classe.Participante;
 
-
 public class InfoParticipantes {
     public static Participante coletarInformacoesParticipante(Scanner scan) {
         System.out.println("\n----------Registro de Participantes----------");
@@ -15,8 +14,6 @@ public class InfoParticipantes {
         System.out.print("Número de Celular do Participante: ");
         String numeroCelularParticipante = scan.nextLine();
 
-        String tipoIngresso = "Comum";
-
-        return new Participante(nomeParticipante, emailParticipante, numeroCelularParticipante,  tipoIngresso);
+        return new Participante(nomeParticipante, emailParticipante, numeroCelularParticipante);
     }
 }

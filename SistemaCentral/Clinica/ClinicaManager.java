@@ -17,6 +17,8 @@ public class ClinicaManager {
         LimparTela.limparTela();
         do {
             Cabecalhos.cabecalhoClinica();
+            System.out.print("\n");
+            System.out.println("////////////////////////////////////////////");
             System.out.println("1. Agendar Consulta");
             System.out.println("2. Cancelar Consulta");
             System.out.println("3. Buscar Consulta");
@@ -27,30 +29,41 @@ public class ClinicaManager {
             System.out.println("8. Tornar Médico Disponível");
             System.out.println("9. Listar Especialidades Mais Demandadas");
             System.out.println("10. Sair");
+            System.out.println("////////////////////////////////////////////");
+            System.out.print("\n");
+            System.out.print("Selecione uma das opções: ");
             opcao = leitor.nextInt();
             leitor.nextLine(); // Consome o newline
     
             switch (opcao) {
                 case 1:
+                    LimparTela.limparTela();
                     GerenciamentoConsulta.agendarConsulta(leitor);
                     break;
                 case 2:
+                    LimparTela.limparTela();
                     GerenciamentoConsulta.cancelarConsulta(leitor);
                     break;
                 case 3:
-                    System.out.println("Digite o nome do médico para buscar suas consultas:");
+                    LimparTela.limparTela();
+                    System.out.println("\n----------Buscar Consulta----------");
+                    System.out.print("Digite o nome do médico para buscar suas consultas: ");
                     String nomeMedico = leitor.nextLine();
-                    GerenciamentoClinica.listarConsultasPorMedico(nomeMedico);
+                    GerenciamentoClinica.listarConsultasPorMedico(nomeMedico);  // Chama o método que agora imprime as consultas
                     break;
                 case 4:
-                    System.out.println("Digite o nome do paciente:");
+                    LimparTela.limparTela();
+                    System.out.println("\n----------Buscar Paciente----------");
+                    System.out.print("Digite o nome do paciente: ");
                     String nomePaciente = leitor.nextLine();
-                    GerenciamentoPaciente.buscarPaciente(nomePaciente);  // Use este método para listar as consultas do paciente
+                    GerenciamentoPaciente.buscarPaciente(nomePaciente);  
                     GerenciamentoPaciente.listarConsultasDoPaciente(nomePaciente);
                     break;
                 
                 case 5:
-                    System.out.println("Digite o nome do médico:");
+                    LimparTela.limparTela();
+                    System.out.println("\n----------Buscar Médico----------");
+                    System.out.print("Digite o nome do médico: ");
                     nomeMedico = leitor.nextLine();
                     GerenciamentoMedico.buscarMedico(nomeMedico);
                     break;
@@ -61,7 +74,9 @@ public class ClinicaManager {
                     GerenciamentoClinica.listarPacientesMaisConsultas();
                     break;
                 case 8:
-                    System.out.println("Digite o nome do médico para torná-lo disponível:");
+                    LimparTela.limparTela();
+                    System.out.println("\n----------Tornar Disponivel----------");
+                    System.out.print("Digite o nome do médico para torná-lo disponível: ");
                     nomeMedico = leitor.nextLine();
                     GerenciamentoMedico.tornarDisponivel(nomeMedico);
                     break;

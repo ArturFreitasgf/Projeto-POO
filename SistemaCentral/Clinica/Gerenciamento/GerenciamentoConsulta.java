@@ -20,12 +20,13 @@ public class GerenciamentoConsulta {
     }
 
     public static void agendarConsulta(Scanner leitor) {
-        System.out.println("Digite o nome do paciente:");
+        System.out.println("\n----------Agendamento Consulta----------");
+        System.out.print("Digite o nome do paciente: ");
         String nomePaciente = leitor.nextLine();
         Paciente paciente = GerenciamentoPaciente.buscarPaciente(nomePaciente);
-
+    
         if (paciente == null) {
-            System.out.println("Paciente não encontrado. Deseja cadastrar um novo? (S/N)");
+            System.out.print("Deseja cadastrar um novo? (S/N): ");
             String resposta = leitor.nextLine();
             if (resposta.equalsIgnoreCase("S")) {
                 paciente = GerenciamentoPaciente.cadastrarPaciente(leitor);
@@ -33,13 +34,14 @@ public class GerenciamentoConsulta {
                 return;
             }
         }
-
-        System.out.println("Digite o nome do médico:");
+    
+        System.out.println("\n----------Agendamento Consulta----------");
+        System.out.print("Digite o nome do médico: ");
         String nomeMedico = leitor.nextLine();
         IMedico medico = GerenciamentoMedico.buscarMedico(nomeMedico);
-
+    
         if (medico == null) {
-            System.out.println("Médico não encontrado. Deseja cadastrar um novo? (S/N)");
+            System.out.print("Médico não encontrado. Deseja cadastrar um novo? (S/N): ");
             String resposta = leitor.nextLine();
             if (resposta.equalsIgnoreCase("S")) {
                 medico = GerenciamentoMedico.adicionarMedico(leitor);
@@ -51,30 +53,32 @@ public class GerenciamentoConsulta {
             System.out.println("Médico não está disponível.");
             return;
         }
-
-        System.out.println("Digite a data e hora da consulta (formato dd/MM/yyyy HH:mm):");
+    
+        System.out.println("\n----------Agendamento Consulta----------");
+        System.out.print("Digite a data e hora da consulta (formato dd/MM/yyyy HH:mm): ");
         String dataHoraInput = leitor.nextLine();
         LocalDateTime dataHoraLocal;
-
+    
         try {
             SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm");
             Date dataHora = formato.parse(dataHoraInput);
-
+    
             if (dataHora.before(new Date())) {
                 System.out.println("A data e hora da consulta não podem ser no passado.");
                 return;
             }
-
+    
             dataHoraLocal = dataHora.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
         } catch (ParseException e) {
             System.out.println("Formato de data e hora inválido.");
             return;
         }
-
+    
+        // Aqui adicionamos a consulta à lista centralizada
         Consulta consulta = new Consulta(dataHoraLocal, medico, paciente);
-        consultas.add(consulta);
+        GerenciamentoClinica.getConsultas().add(consulta);  // Alterado para adicionar à lista centralizada
+    
         medico.setDisponivel(false); // Atualiza a disponibilidade do médico
-
         System.out.println("Consulta agendada com sucesso.");
     }
 
@@ -84,13 +88,13 @@ public class GerenciamentoConsulta {
             return;
         }
 
-        System.out.println("Consultas agendadas:");
+        System.out.print("Consultas agendadas: ");
         for (int i = 0; i < consultas.size(); i++) {
             Consulta consulta = consultas.get(i);
             System.out.println(i + ". " + consulta);
         }
 
-        System.out.println("Digite o índice da consulta a ser cancelada:");
+        System.out.print("Digite o índice da consulta a ser cancelada: ");
         int indiceConsulta = leitor.nextInt();
         leitor.nextLine(); // Consome o newline
 
@@ -110,7 +114,7 @@ public class GerenciamentoConsulta {
             return;
         }
 
-        System.out.println("Consultas agendadas:");
+        System.out.println("Consultas agendadas: ");
         for (Consulta consulta : consultas) {
             System.out.println(consulta);
         }
