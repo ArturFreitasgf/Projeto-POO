@@ -1,24 +1,16 @@
 package Clinica.Class;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import Utils.Classes.AgendamentoBase;
 
-public class Consulta {
-    private Paciente paciente;
+public class Consulta extends AgendamentoBase {
     private Medico medico;
-    private Date dataHora;
+    private Paciente paciente;
 
-    public Consulta(Paciente paciente, Medico medico, Date dataHora) {
-        this.paciente = paciente;
+    public Consulta(LocalDateTime dataHora, Medico medico, Paciente paciente) {
+        super(dataHora);  // Chamando o construtor da classe base
         this.medico = medico;
-        this.dataHora = dataHora;
-    }
-
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
 
@@ -30,19 +22,31 @@ public class Consulta {
         this.medico = medico;
     }
 
-    public Date getDataHora() {
-        return dataHora;
+    public Paciente getPaciente() {
+        return paciente;
     }
 
-    public void setDataHora(Date dataHora) {
-        this.dataHora = dataHora;
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    @Override
+    public boolean verificarDisponibilidade() {
+        return medico.isDisponivel();  // Verifica se o médico está disponível.
+    }
+
+    @Override
+    public void agendar(LocalDateTime dataHora) {
+        setDataHora(dataHora);  // Atribui a dataHora utilizando o método da classe base
+        System.out.println("Consulta agendada para " + dataHora);
     }
 
     @Override
     public String toString() {
-        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        // Usando DateTimeFormatter para formatar LocalDateTime
+        DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         return "Consulta [Paciente: " + paciente.getNome() + 
                ", Médico: " + medico.getNome() + 
-               ", Data/Hora: " + formatoData.format(dataHora) + "]";
+               ", Data/Hora: " + getDataHora().format(formatoData) + "]";
     }
 }

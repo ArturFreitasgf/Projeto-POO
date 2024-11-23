@@ -1,12 +1,18 @@
-package Clinica.Class;
+package Clinica.Gerenciamento;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+import java.text.ParseException;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import Clinica.Class.Consulta;
+import Clinica.Class.Medico;
+import Clinica.Class.Paciente;
+import Clinica.Metodos.CadastroPaciente;
 
-public class GerenciamentoClinica {
+public class GerenciamentoConsulta {
     private static ArrayList<Consulta> consultas = new ArrayList<>();
 
     public static ArrayList<Consulta> getConsultas() {
@@ -22,7 +28,7 @@ public class GerenciamentoClinica {
             System.out.println("Paciente não encontrado. Deseja cadastrar um novo? (S/N)");
             String resposta = leitor.nextLine();
             if (resposta.equalsIgnoreCase("S")) {
-                paciente = GerenciamentoPaciente.cadastrarPaciente(leitor);
+                paciente = CadastroPaciente.cadastrarPaciente(leitor);
             } else {
                 return;
             }
@@ -62,7 +68,12 @@ public class GerenciamentoClinica {
             return;
         }
 
-        Consulta consulta = new Consulta(paciente, medico, dataHora);
+        // Conversão de Date para LocalDateTime
+        LocalDateTime dataHoraLocal = dataHora.toInstant()
+            .atZone(ZoneId.systemDefault())
+            .toLocalDateTime();
+
+        Consulta consulta = new Consulta(dataHoraLocal, medico, paciente);
         consultas.add(consulta);
         medico.setDisponivel(false); // Atualiza a disponibilidade do médico
         System.out.println("Consulta agendada com sucesso.");
@@ -93,24 +104,6 @@ public class GerenciamentoClinica {
             System.out.println("Consulta cancelada com sucesso.");
         } else {
             System.out.println("Índice de consulta inválido.");
-        }
-    }
-
-    public static void buscarConsulta(Scanner leitor) {
-        System.out.println("Digite o nome do paciente:");
-        String nomePaciente = leitor.nextLine();
-
-        boolean encontrado = false;
-        for (Consulta consulta : consultas) {
-            if (consulta.getPaciente().getNome().equalsIgnoreCase(nomePaciente)) {
-                System.out.println("Consulta com Dr. " + consulta.getMedico().getNome() +
-                                   " em " + consulta.getDataHora());
-                encontrado = true;
-            }
-        }
-
-        if (!encontrado) {
-            System.out.println("Nenhuma consulta encontrada para este paciente.");
         }
     }
 }

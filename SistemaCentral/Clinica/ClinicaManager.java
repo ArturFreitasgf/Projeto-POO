@@ -1,7 +1,7 @@
 package Clinica;
 
 import java.util.Scanner;
-import Clinica.Class.*;
+import Clinica.Gerenciamento.*;
 import Utils.Cabecalhos;
 import Utils.LimparTela;
 
@@ -40,7 +40,7 @@ public class ClinicaManager {
                 case 3:
                     System.out.println("Digite o nome do médico para buscar suas consultas:");
                     String nomeMedico = leitor.nextLine();
-                    GerenciamentoConsulta.listarConsultasPorMedico(nomeMedico);
+                    GerenciamentoClinica.listarConsultasPorMedico(nomeMedico);
                     break;
                 case 4:
                     System.out.println("Digite o nome do paciente:");
@@ -53,10 +53,10 @@ public class ClinicaManager {
                     GerenciamentoMedico.buscarMedico(nomeMedico);
                     break;
                 case 6:
-                    GerenciamentoConsulta.listarMedicosMaisSolicitados();
+                    GerenciamentoClinica.listarMedicosMaisSolicitados();
                     break;
                 case 7:
-                    GerenciamentoConsulta.listarPacientesMaisConsultas();
+                    GerenciamentoClinica.listarPacientesMaisConsultas();
                     break;
                 case 8:
                     System.out.println("Digite o nome do médico para torná-lo disponível:");
@@ -64,7 +64,7 @@ public class ClinicaManager {
                     GerenciamentoMedico.tornarDisponivel(nomeMedico);
                     break;
                 case 9:
-                    GerenciamentoConsulta.listarEspecialidadesMaisDemandadas();
+                    GerenciamentoClinica.listarEspecialidadesMaisDemandadas();
                     break;
                 case 10:
                     System.out.println("Saindo...");

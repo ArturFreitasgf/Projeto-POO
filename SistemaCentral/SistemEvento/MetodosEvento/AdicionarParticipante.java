@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import SistemEvento.Classe.Evento;
 import SistemEvento.Classe.Participante;
-import Clinica.Class.GerenciamentoMedico;
+import Clinica.Gerenciamento.GerenciamentoMedico;
 import Clinica.Class.Medico;
 
 public class AdicionarParticipante {

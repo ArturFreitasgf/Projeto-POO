@@ -1,11 +1,14 @@
-package Clinica.Class;
+package Clinica.Gerenciamento;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import Clinica.Class.Medico;
+import Clinica.Metodos.CadastroMedico;
 
 public class GerenciamentoMedico {
     private static ArrayList<Medico> medicos = new ArrayList<>();
 
+<<<<<<< HEAD:SistemaCentral/Clinica/Class/GerenciamentoMedico.java
     public static Medico adicionarMedico(Scanner leitor) {
         System.out.println("Digite o nome do médico:");
         String nome = leitor.nextLine();
@@ -23,9 +26,12 @@ public class GerenciamentoMedico {
         Medico novoMedico = new Medico(nome, email, telefone, especialidade, disponivel, crm);
 
         medicos.add(novoMedico);
+=======
+    public static void adicionarMedico(Scanner leitor) {
+        Medico medico = CadastroMedico.cadastrarMedico(leitor);
+        medicos.add(medico);
+>>>>>>> 7d389f3 (Clinica Finalizada):SistemaCentral/Clinica/Gerenciamento/GerenciamentoMedico.java
         System.out.println("Médico adicionado com sucesso.");
-
-        return novoMedico;
     }
 
     public static Medico buscarMedico(String nome) {

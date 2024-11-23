@@ -1,7 +1,9 @@
-package Clinica.Class;
+package Clinica.Gerenciamento;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import Clinica.Class.Consulta;
+import Clinica.Class.Paciente;
 
 public class GerenciamentoPaciente {
     private static ArrayList<Paciente> pacientes = new ArrayList<>();

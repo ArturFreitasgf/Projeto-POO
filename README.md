@@ -80,3 +80,23 @@ PERGUNTAS (Análise):
 4)Quais eventos têm maior taxa de participação ?
 
 5)Quais são as especialidades médicas mais demandadas ?
+
+
+---------------==================-----------------===================---------------===========---------
+
+
+### Aplicação dos Princípios SOLID
+
+Este projeto foi desenvolvido seguindo os princípios SOLID para garantir a organização, extensibilidade e manutenção do código. Abaixo, explicamos como cada princípio foi aplicado:
+
+1. **Responsabilidade Única (SRP)**: Cada classe possui uma única responsabilidade. Por exemplo, `GerenciamentoPaciente` é responsável apenas por cadastrar e buscar pacientes.
+
+2. **Aberto/Fechado (OCP)**: O sistema permite a adição de novos tipos de agendamentos (como consultas, eventos, e reservas de mesa) sem modificar o código existente. Isso foi alcançado com a interface `Agendavel` e a classe abstrata `AgendamentoBase`.
+
+3. **Substituição de Liskov (LSP)**: Todas as subclasses de `AgendamentoBase` (como `Consulta` e `Evento`) podem ser usadas onde uma instância de `Agendavel` é esperada, mantendo o comportamento esperado.
+
+4. **Segregação de Interfaces (ISP)**: As interfaces foram projetadas para serem específicas e focadas. Por exemplo, `Agendavel` trata apenas de funcionalidades relacionadas a agendamentos.
+
+5. **Inversão de Dependência (DIP)**: O sistema depende de abstrações, como `Agendavel` e `RelatorioGeneravel`, em vez de classes concretas.
+
+Essa estrutura garante um código limpo, modular e preparado para futuras extensões.

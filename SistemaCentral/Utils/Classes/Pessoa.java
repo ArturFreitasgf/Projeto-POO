@@ -5,10 +5,18 @@ public class Pessoa {
     private String email;
     private String numeroCelular;
 
+    // Construtor original
     public Pessoa(String nome, String email, String numeroCelular) {
         this.nome = nome;
         this.email = email;
         this.numeroCelular = numeroCelular;
+    }
+
+    // Novo construtor sem parâmetros para apenas nome
+    public Pessoa(String nome) {
+        this.nome = nome;
+        this.email = "Email não informado";  // Valor padrão
+        this.numeroCelular = "Número não informado";  // Valor padrão
     }
 
     public String getNome() {
