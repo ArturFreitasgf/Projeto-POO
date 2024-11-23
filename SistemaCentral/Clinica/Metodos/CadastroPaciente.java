@@ -1,5 +1,6 @@
 package Clinica.Metodos;
 
+
 import java.util.Scanner;
 import Clinica.Class.Paciente;
 

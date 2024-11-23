@@ -1,8 +1,9 @@
 package Clinica.Class;
 
 import Utils.Classes.Pessoa;
+import Utils.Interfaces.IMedico;
 
-public class Medico extends Pessoa {
+public class Medico extends Pessoa implements IMedico{
     private String especialidade;
     private boolean disponivel;
     private String crm;

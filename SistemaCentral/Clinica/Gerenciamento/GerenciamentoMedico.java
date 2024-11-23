@@ -2,6 +2,7 @@ package Clinica.Gerenciamento;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import Clinica.Class.Medico;
 import Clinica.Metodos.CadastroMedico;
 
@@ -28,14 +29,14 @@ public class GerenciamentoMedico {
         medicos.add(novoMedico);
 =======
     public static void adicionarMedico(Scanner leitor) {
-        Medico medico = CadastroMedico.cadastrarMedico(leitor);
+        IMedico medico = CadastroMedico.cadastrarMedico(leitor);
         medicos.add(medico);
 >>>>>>> 7d389f3 (Clinica Finalizada):SistemaCentral/Clinica/Gerenciamento/GerenciamentoMedico.java
         System.out.println("Médico adicionado com sucesso.");
     }
 
     public static Medico buscarMedico(String nome) {
-        for (Medico medico : medicos) {
+        for (IMedico medico : medicos) {
             if (medico.getNome().equalsIgnoreCase(nome)) {
                 // Exibe as informações do médico através do método toString()
                 System.out.println(medico);  // Usando o método toString() para exibir as informações
@@ -46,7 +47,7 @@ public class GerenciamentoMedico {
         return null;
     }
     public static Medico buscarMedicoPorCrm(String crm){
-        for(Medico medico: medicos) {
+        for(IMedico medico: medicos) {
             if(medico.getCrm().equalsIgnoreCase(crm)){
                 return medico;
             }
@@ -55,7 +56,7 @@ public class GerenciamentoMedico {
     }
 
     public static void tornarDisponivel(String nomeMedico) {
-        Medico medico = buscarMedico(nomeMedico);
+        IMedico medico = buscarMedico(nomeMedico);
         if (medico != null) {
             medico.setDisponivel(true);
             System.out.println("Médico " + medico.getNome() + " agora está disponível.");

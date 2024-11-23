@@ -11,6 +11,7 @@ import Clinica.Class.Consulta;
 import Clinica.Class.Medico;
 import Clinica.Class.Paciente;
 import Clinica.Metodos.CadastroPaciente;
+import Utils.Interfaces.IMedico;
 
 public class GerenciamentoConsulta {
     private static ArrayList<Consulta> consultas = new ArrayList<>();
@@ -36,7 +37,7 @@ public class GerenciamentoConsulta {
 
         System.out.println("Digite o nome do médico:");
         String nomeMedico = leitor.nextLine();
-        Medico medico = GerenciamentoMedico.buscarMedico(nomeMedico);
+        IMedico medico = GerenciamentoMedico.buscarMedico(nomeMedico);
 
         if (medico == null) {
             System.out.println("Médico não encontrado. Deseja cadastrar um novo? (S/N)");

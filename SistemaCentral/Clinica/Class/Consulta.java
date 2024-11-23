@@ -3,22 +3,23 @@ package Clinica.Class;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import Utils.Classes.AgendamentoBase;
+import Utils.Interfaces.IMedico;
 
 public class Consulta extends AgendamentoBase {
-    private Medico medico;
+    private IMedico medico;  // Alterado para usar IMedico
     private Paciente paciente;
 
-    public Consulta(LocalDateTime dataHora, Medico medico, Paciente paciente) {
+    public Consulta(LocalDateTime dataHora, IMedico medico, Paciente paciente) {
         super(dataHora);  // Chamando o construtor da classe base
         this.medico = medico;
         this.paciente = paciente;
     }
 
-    public Medico getMedico() {
+    public IMedico getMedico() {
         return medico;
     }
 
-    public void setMedico(Medico medico) {
+    public void setMedico(IMedico medico) {
         this.medico = medico;
     }
 
