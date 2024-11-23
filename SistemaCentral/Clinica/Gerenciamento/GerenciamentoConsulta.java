@@ -10,7 +10,6 @@ import java.time.ZoneId;
 
 import Clinica.Class.Consulta;
 import Clinica.Class.Paciente;
-import Clinica.Metodos.CadastroPaciente;
 import Utils.Interfaces.IMedico;
 
 public class GerenciamentoConsulta {
