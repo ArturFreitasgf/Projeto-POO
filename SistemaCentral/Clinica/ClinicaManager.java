@@ -45,8 +45,10 @@ public class ClinicaManager {
                 case 4:
                     System.out.println("Digite o nome do paciente:");
                     String nomePaciente = leitor.nextLine();
-                    GerenciamentoPaciente.buscarPaciente(nomePaciente);
+                    GerenciamentoPaciente.buscarPaciente(nomePaciente);  // Use este método para listar as consultas do paciente
+                    GerenciamentoPaciente.listarConsultasDoPaciente(nomePaciente);
                     break;
+                
                 case 5:
                     System.out.println("Digite o nome do médico:");
                     nomeMedico = leitor.nextLine();

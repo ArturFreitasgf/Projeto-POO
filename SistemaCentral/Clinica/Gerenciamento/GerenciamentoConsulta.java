@@ -7,8 +7,8 @@ import java.util.Scanner;
 import java.text.ParseException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+
 import Clinica.Class.Consulta;
-import Clinica.Class.Medico;
 import Clinica.Class.Paciente;
 import Clinica.Metodos.CadastroPaciente;
 import Utils.Interfaces.IMedico;
@@ -18,7 +18,7 @@ public class GerenciamentoConsulta {
 
     public static ArrayList<Consulta> getConsultas() {
         return consultas;
-    }    
+    }
 
     public static void agendarConsulta(Scanner leitor) {
         System.out.println("Digite o nome do paciente:");
@@ -29,7 +29,7 @@ public class GerenciamentoConsulta {
             System.out.println("Paciente não encontrado. Deseja cadastrar um novo? (S/N)");
             String resposta = leitor.nextLine();
             if (resposta.equalsIgnoreCase("S")) {
-                paciente = CadastroPaciente.cadastrarPaciente(leitor);
+                paciente = GerenciamentoPaciente.cadastrarPaciente(leitor);
             } else {
                 return;
             }
@@ -49,34 +49,33 @@ public class GerenciamentoConsulta {
                 return;
             }
         } else if (!medico.isDisponivel()) {
-            System.out.println("Médico não disponível.");
+            System.out.println("Médico não está disponível.");
             return;
         }
 
         System.out.println("Digite a data e hora da consulta (formato dd/MM/yyyy HH:mm):");
         String dataHoraInput = leitor.nextLine();
-        Date dataHora;
+        LocalDateTime dataHoraLocal;
 
         try {
             SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-            dataHora = formato.parse(dataHoraInput);
+            Date dataHora = formato.parse(dataHoraInput);
+
             if (dataHora.before(new Date())) {
                 System.out.println("A data e hora da consulta não podem ser no passado.");
                 return;
             }
+
+            dataHoraLocal = dataHora.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
         } catch (ParseException e) {
             System.out.println("Formato de data e hora inválido.");
             return;
         }
 
-        // Conversão de Date para LocalDateTime
-        LocalDateTime dataHoraLocal = dataHora.toInstant()
-            .atZone(ZoneId.systemDefault())
-            .toLocalDateTime();
-
         Consulta consulta = new Consulta(dataHoraLocal, medico, paciente);
         consultas.add(consulta);
         medico.setDisponivel(false); // Atualiza a disponibilidade do médico
+
         System.out.println("Consulta agendada com sucesso.");
     }
 
@@ -89,9 +88,7 @@ public class GerenciamentoConsulta {
         System.out.println("Consultas agendadas:");
         for (int i = 0; i < consultas.size(); i++) {
             Consulta consulta = consultas.get(i);
-            System.out.println(i + ". Paciente: " + consulta.getPaciente().getNome() +
-                               ", Médico: " + consulta.getMedico().getNome() +
-                               ", Data/Hora: " + consulta.getDataHora());
+            System.out.println(i + ". " + consulta);
         }
 
         System.out.println("Digite o índice da consulta a ser cancelada:");
@@ -105,6 +102,18 @@ public class GerenciamentoConsulta {
             System.out.println("Consulta cancelada com sucesso.");
         } else {
             System.out.println("Índice de consulta inválido.");
+        }
+    }
+
+    public static void listarConsultas() {
+        if (consultas.isEmpty()) {
+            System.out.println("Nenhuma consulta agendada.");
+            return;
+        }
+
+        System.out.println("Consultas agendadas:");
+        for (Consulta consulta : consultas) {
+            System.out.println(consulta);
         }
     }
 }
