@@ -18,7 +18,6 @@ public class SistemaManager {
         Scanner scan = new Scanner(System.in);
 
         LimparTela.limparTela();
-
         int valor;
 
         do{
