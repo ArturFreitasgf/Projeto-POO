@@ -100,3 +100,16 @@ Este projeto foi desenvolvido seguindo os princípios SOLID para garantir a orga
 5. **Inversão de Dependência (DIP)**: O sistema depende de abstrações, como `Agendavel` e `RelatorioGeneravel`, em vez de classes concretas.
 
 Essa estrutura garante um código limpo, modular e preparado para futuras extensões.
+
+
+---------------==================-----------------===================---------------===========---------
+
+
+### Documentação UML
+
+
+1. 
+![UML Diagram (2)](https://github.com/user-attachments/assets/96aebc5d-613e-4c4a-8c39-50b996dd9566)
+
+Link do Diagrama de Classes: https://miro.com/welcomeonboard/YlNrTStiSTdzTjFhZi9YRUpwWmVzWi96L1RkOFJxTmN6aG5xRmNHK1RBQkRua0NhSDBndFZnSW5KR3Q4Ri9EVUdWWmZJUVhMUzd1eGlHcUlvS1NjNFIza1R5di9tVzRGUExzclE5QlpMbG96Q3dWL0p5VnVTYXNyVEJvNG9uNWshZQ==?share_link_id=176352138617
+
