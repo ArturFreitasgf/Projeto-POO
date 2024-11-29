@@ -116,3 +116,5 @@ Essa estrutura garante um código limpo, modular e preparado para futuras extens
 
 Link do Diagrama de Classes: https://miro.com/welcomeonboard/YlNrTStiSTdzTjFhZi9YRUpwWmVzWi96L1RkOFJxTmN6aG5xRmNHK1RBQkRua0NhSDBndFZnSW5KR3Q4Ri9EVUdWWmZJUVhMUzd1eGlHcUlvS1NjNFIza1R5di9tVzRGUExzclE5QlpMbG96Q3dWL0p5VnVTYXNyVEJvNG9uNWshZQ==?share_link_id=176352138617
 
+2.  
+![Classe UML](https://github.com/user-attachments/assets/457f86d6-19f1-4098-a1f1-54939a34deec)
